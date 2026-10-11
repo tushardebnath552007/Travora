@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisdom - Travel Guide & FAQ | TRAVORA</title>
+  <meta name="description" content="Travel wisdom: packing checklists, pro field tips, honest FAQs, and voyager stories for Himalayan, coastal, and royal journeys.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;900&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/css/style.css">
+</head>
+<body data-theme="amber">
+
+  <div id="bg-viewport">
+    <div id="movable-bg" style="background-image: url('/assets/images/dest_patagonia_torres_1791217704007.jpg');"></div>
+  </div>
+
+
+  <button class="menubar-fab" aria-label="Open menu">☰</button>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <div class="brand-emblem">🧭</div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">TRAVORA</span>
+          <span class="brand-tagline">Curated Odysseys</span>
+        </div>
+      </a>
+
+      <div style="background: linear-gradient(135deg, rgba(251,191,36,0.18) 0%, rgba(234,88,12,0.18) 100%); border: 1px solid rgba(251,191,36,0.4); border-radius: 12px; padding: 12px 14px; width: 100%;">
+        <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; color: #fde68a;">📜 FIELD WISDOM CODEX</div>
+        <div style="font-weight: 800; color: #fff; font-size: 0.95rem;">Pack smart, travel far</div>
+      </div>
+
+      <div class="nav-account" id="nav-account" style="display: none;">
+        <div class="nav-account-avatar" id="nav-account-avatar">T</div>
+        <div class="nav-account-info">
+          <div class="nav-account-name" id="nav-account-name">Traveler</div>
+          <div class="nav-account-email" id="nav-account-email">you@example.com</div>
+        </div>
+        <button class="nav-account-out" onclick="logoutUser()" title="Sign out">⎋</button>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-item-link">Home</a></li>
+        <li><a href="destinations.html" class="nav-item-link">Destinations</a></li>
+        <li><a href="experiences.html" class="nav-item-link">Experiences</a></li>
+        <li><a href="budget-estimator.html" class="nav-item-link">Budget Estimator</a></li>
+        <li><a href="interactive-map.html" class="nav-item-link">Interactive Map</a></li>
+        <li><a href="wisdom.html" class="nav-item-link active">Wisdom</a></li>
+        <li><a href="contact.html" class="nav-item-link">Contact</a></li>
+      </ul>
+
+      <div class="social-icons-bar">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+        <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="action-btn-wishlist" onclick="openWishlistDrawer()" title="View Saved Destinations">
+          <span>♥ Wishlist</span>
+          <span class="wishlist-count-badge">0</span>
+        </button>
+        <button class="btn-plan-trip" onclick="window.location.href='index.html'">
+          <span>Back Home</span>
+          <span>→</span>
+        </button>
+        <button class="hamburger-btn" aria-label="Toggle Navigation">☰</button>
+          <div class="auth-row">
+            <a href="login.html" class="auth-btn-login">Log In</a>
+            <a href="signup.html" class="auth-btn-signup">Sign Up</a>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="under-nav-search-bar" id="under-nav-search">
+    <div class="search-inner-wrapper">
+      <div class="search-primary-row">
+        <div class="search-input-box">
+          <span class="search-icon-left">🔍</span>
+          <input type="text" id="under-nav-input" class="main-search-input" placeholder="Search wisdom: packing, permits, seasons..." autocomplete="off">
+          <span class="search-kbd-hint">Press '/' to search</span>
+          <div id="search-dropdown" class="search-results-dropdown"></div>
+        </div>
+      </div>
+      <div class="search-filters-row">
+        <div class="category-filter-chips">
+          <span class="filter-chip active" data-category="all">All Wisdom</span>
+          <span class="filter-chip" data-category="mountains">🏔 Alpine</span>
+          <span class="filter-chip" data-category="beaches">🏖 Coastal</span>
+          <span class="filter-chip" data-category="heritage">🏰 Heritage</span>
+          <span class="filter-chip" data-category="aurora">🌌 Night Skies</span>
+        </div>
+        <div class="quick-tags-prompt"><span>18,500+ travelers advise 👇</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <nav class="page-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span>›</span><span>Wisdom</span>
+    </nav>
+    <div class="wisdom-layout">
+      <aside class="wisdom-side">
+        <div class="wisdom-side-title">Codex Chapters</div>
+        <a href="#faq"><b>I</b>FAQ Codex</a>
+        <a href="#pro-tips"><b>II</b>Six Road Rules</a>
+        <a href="#packing"><b>III</b>Packing List</a>
+        <a href="#ask"><b>IV</b>Ask the Codex</a>
+        <a href="#helpline"><b>V</b>Helpline Desk</a>
+        <a href="#voices"><b>VI</b>Voyager Stories</a>
+      </aside>
+      <div class="wisdom-main">
+
+    <section class="hero-section">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge"><span>✦</span> Field Codex · 18,500+ Voyagers Strong</div>
+          <h1 class="hero-title">TRAVEL <span class="hero-title-highlight">WISDOM & FAQ</span></h1>
+          <p class="hero-description">
+            Packing checklists, permit explainers, season almanacs, and honest answers — the collective field intelligence of every Travora expedition to date.
+          </p>
+          <div class="hero-actions-row">
+            <a href="#faq" class="btn-hero-primary"><span>Read the FAQ</span><span>→</span></a>
+            <a href="#packing" class="btn-hero-secondary"><span>Packing Checklist</span><span>🎒</span></a>
+          </div>
+          <div class="hero-metrics-strip">
+            <div class="metric-item"><span class="metric-val">40+</span><span class="metric-lbl">Answered Questions</span></div>
+            <div class="metric-item"><span class="metric-val">6</span><span class="metric-lbl">Pro Field Tips</span></div>
+            <div class="metric-item"><span class="metric-val">24/7</span><span class="metric-lbl">Concierge Support</span></div>
+          </div>
+        </div>
+        <div class="hero-glass-card">
+          <div class="card-header-tag">
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #f59e0b; text-transform: uppercase;">✦ Golden Rule № 1</span>
+            <span style="background: rgba(251,191,36,0.2); color: #fde68a; font-size: 0.8rem; font-weight: 700; padding: 4px 10px; border-radius: 12px;">Unskippable</span>
+          </div>
+          <img src="/assets/images/dest_patagonia_torres_1791217704007.jpg" class="trip-card-img-preview" alt="Patagonia Wisdom">
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: #fff; margin-bottom: 6px;">Never Chase Weather — Outsmart It</h3>
+          <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 18px;">Our concierge reorders your days around 72-hour forecasts, so clear skies meet you — not the other way round.</p>
+          <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px;">
+            <div>
+              <span style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">From the codex</span>
+              <div style="font-size: 1rem; font-weight: 800; color: #f59e0b;">Rule 01 of 40</div>
+            </div>
+            <a href="#pro-tips" class="dest-btn-view">Read All Rules →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="codex-ornament">❦ ❦ ❦</div>
+    <section class="page-section" id="faq">
+      <div class="section-header">
+        <span class="section-tag">Expert Guidance</span>
+        <h2 class="section-title">TRAVEL WISDOM & FAQ</h2>
+        <p class="section-subtitle">Essential answers regarding packing, booking flexibilities, and bespoke concierge assistance.</p>
+      </div>
+      <div class="faq-list codex-timeline" id="wisdom-faq">
+        <div class="faq-item"><div class="faq-header"><span>How do custom itineraries and concierge bookings work?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Once you choose your destinations or use our budget calculator, our dedicated concierge team pairs you with a local specialist. They coordinate luxury boutique properties, private chauffeurs, permits, and private guides tailored to your exact pacing.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>What is included in the estimated package price?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">All package prices include 4★/5★ heritage stays, gourmet breakfast and dining allowances, private air-conditioned vehicle transfers, entry passes, and 24/7 on-call trip support. Domestic flights can be bundled seamlessly upon request.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>What is the best time to visit Kashmir and Goa?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Kashmir is breathtaking from April to June for blooming tulips and green meadows, and December to February for skiing and fresh snow. Goa shines brightest from November to March when the coastal climate is dry, balmy, and pleasant.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>What permits do Himalayan and border regions need?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Protected-area permits apply in Ladakh, Sikkim, and parts of Arunachal. Your route sheet lists every permit with processing times — the concierge files them all; you only carry photo ID copies.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>How fit must I be for alpine treks?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Most listed treks are graded easy–moderate with acclimatization days built in. A daily 30-minute walk for three weeks before departure is the only training we prescribe.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>What happens if my flight is delayed?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Your chauffeur tracks live arrivals and waits free for 3 hours. Stays shift by a night where possible, and missed experience slots are rebooked at no penalty.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>Can vegetarians and Jain travelers dine well?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Wonderfully. Kashmir, Gujarat, Rajasthan, and Tamil Nadu run deep vegetarian traditions; every tasting menu has Jain and vegan variants on request.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>Is solo travel safe with Travora?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Yes — verified stays, background-checked chauffeurs, live location sharing with your family, and a 24/7 helpline on every single route.</div></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="pro-tips">
+      <div class="section-header">
+        <span class="section-tag">Pro Field Manual</span>
+        <h2 class="section-title">SIX RULES OF THE ROAD</h2>
+        <p class="section-subtitle">Hard-won wisdom from 18,500+ nomads across the subcontinent and beyond.</p>
+      </div>
+      <div class="testimonials-grid codex-tablets">
+        <div class="testimonial-card"><div><div class="test-stars">🎫</div><p class="test-quote"><strong>Book permits 2 weeks early.</strong> Gondolas, toy-train berths, and shikaras sell out in peak season — early booking saves up to 25%.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">🧥</div><p class="test-quote"><strong>Carry layered woolens.</strong> Himalayan dawns drop to 4°C even in May. A windproof shell over fleece beats one heavy jacket.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">🙏</div><p class="test-quote"><strong>Respect local customs.</strong> Remove shoes at monasteries, ask before photographing residents, and tip trek crews fairly.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">💧</div><p class="test-quote"><strong>Hydrate on high routes.</strong> Above 2,000m, drink twice your usual water and go easy the first 48 hours.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">💵</div><p class="test-quote"><strong>Keep cash for bazaars.</strong> Mountain markets and floating vendors rarely accept cards. Small notes unlock bargaining.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">🛡</div><p class="test-quote"><strong>Insure the expedition.</strong> Adventure sports and high-altitude treks deserve proper cover. Compare before you fly.</p></div></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="packing">
+      <div class="section-header">
+        <span class="section-tag">Pack Like a Scout</span>
+        <h2 class="section-title">THE UNIVERSAL CHECKLIST</h2>
+        <p class="section-subtitle">One bag, every climate. Tick these off and you're expedition-ready.</p>
+      </div>
+      <div class="calculator-box manifest" style="grid-template-columns: 1fr;">
+        <div class="calc-breakdown-list">
+          <div class="breakdown-row"><span>🎒 40–55L backpack + 15L daypack</span><span>Essential</span></div>
+          <div class="breakdown-row"><span>🧥 Fleece + windproof shell + down layer</span><span>Mountains</span></div>
+          <div class="breakdown-row"><span>🥾 Broken-in trekking shoes + sandals</span><span>Essential</span></div>
+          <div class="breakdown-row"><span>🔦 Headlamp + power bank + universal adapter</span><span>Essential</span></div>
+          <div class="breakdown-row"><span>💊 Personal meds + altitude tablets + ORS</span><span>Health</span></div>
+          <div class="breakdown-row"><span>📄 ID copies + permits + insurance papers</span><span>Documents</span></div>
+          <div class="breakdown-row"><span>🕶 Sunglasses + SPF 50 + lip balm</span><span>Sun & Snow</span></div>
+          <div class="breakdown-row"><span>🏊 Quick-dry towel + swimwear</span><span>Coast</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="ask">
+      <div class="section-header">
+        <span class="section-tag">Living Codex</span>
+        <h2 class="section-title">ASK THE CODEX</h2>
+        <p class="section-subtitle">No answer above? Ask below — your question joins the codex instantly and the concierge replies within 24 hours.</p>
+      </div>
+      <div class="calculator-box" style="grid-template-columns: 1fr;">
+        <form id="ask-form" onsubmit="handleAsk(event)">
+          <label class="auth-field"><span>Your Name</span><input type="text" id="ask-name" placeholder="Wandering Yogi"></label>
+          <label class="auth-field"><span>Your Question</span><textarea id="ask-text" placeholder="e.g. Is Gulmarg safe for a 5-year-old in January?" required></textarea></label>
+          <button type="submit" class="btn-plan-trip" style="width: 100%; justify-content: center;"><span>Stamp My Question</span><span>→</span></button>
+        </form>
+      </div>
+    </section>
+
+    <section class="page-section" id="helpline">
+      <div class="section-header">
+        <span class="section-tag">Never Alone Out There</span>
+        <h2 class="section-title">EMERGENCY & HELPLINE DESK</h2>
+        <p class="section-subtitle">Save these before departure. On-trip guests reach a human in under two minutes.</p>
+      </div>
+      <div class="calculator-box" style="grid-template-columns: 1fr;">
+        <div class="calc-breakdown-list">
+          <div class="breakdown-row"><span>📞 24/7 on-trip concierge helpline</span><span>Every route sheet</span></div>
+          <div class="breakdown-row"><span>🏥 Nearest-hospital card per halt</span><span>Inside your dossier</span></div>
+          <div class="breakdown-row"><span>🚗 Backup vehicle dispatch network</span><span>90-min response</span></div>
+          <div class="breakdown-row"><span>📍 Live location sharing with family</span><span>Opt-in, always on-trip</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="codex-ornament">❦ ❦ ❦</div>
+    <section class="page-section" id="voices">
+      <div class="section-header">
+        <span class="section-tag">Voices of Voyagers</span>
+        <h2 class="section-title">WISDOM IN ACTION</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card"><div><div class="test-stars">★★★★★</div><p class="test-quote">"The layering advice saved our Tiger Hill sunrise. Everyone else shivered; we sipped cocoa."</p></div><div class="test-author-row"><div class="test-avatar">MN</div><div><div class="test-author-name">Meera & Arjun Nair</div><div class="test-author-role">Darjeeling · 4 Days</div></div></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">★★★★★</div><p class="test-quote">"Permit filing was invisible to us — everything just worked at every checkpoint."</p></div><div class="test-author-row"><div class="test-avatar">DO</div><div><div class="test-author-name">Daniel Okafor</div><div class="test-author-role">Sikkim · 7 Days</div></div></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">★★★★★</div><p class="test-quote">"Delayed flight, zero panic. Chauffeur waited, stay shifted, slots rebooked."</p></div><div class="test-author-row"><div class="test-avatar">EL</div><div><div class="test-author-name">Elena Rostova</div><div class="test-author-role">Swiss Alps · 7 Days</div></div></div></div>
+      </div>
+    </section>
+
+    <section class="page-section" style="padding-bottom: 30px;">
+      <div style="background: linear-gradient(135deg, rgba(251,191,36,0.15) 0%, rgba(6,182,212,0.15) 100%); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; backdrop-filter: blur(20px);">
+        <h2 style="font-family: var(--font-display); font-size: 2.8rem; color: #fff; margin-bottom: 16px;">STILL CURIOUS?</h2>
+        <p style="color: #cbd5e1; font-size: 1.2rem; max-width: 650px; margin: 0 auto 30px;">Ask the concierge anything — humans reply within 2 hours, 24/7 on-trip.</p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="destinations.html" class="btn-hero-primary">Start with Destinations →</a>
+          <a href="experiences.html" class="btn-hero-secondary">Feel the Rituals ✨</a>
+        </div>
+      </div>
+    </section>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-link" style="margin-bottom: 16px;">
+            <div class="brand-emblem">🧭</div>
+            <div class="brand-text-wrap"><span class="brand-name">TRAVORA</span><span class="brand-tagline">Curated Odysseys</span></div>
+          </div>
+          <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 24px; max-width: 380px;">Artisanal travel discovery and trip-planning platform. Handcrafted for explorers seeking true cultural immersion.</p>
+          <div class="social-icons-bar">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <div class="footer-contact">
+              <div>✉️ hello@travora.io</div>
+              <div>☎️ +91 98765 43210 · 24/7 concierge</div>
+              <div>📍 Connaught Place, New Delhi</div>
+            </div>
+            <div class="app-badges">
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora iOS app — coming soon to the App Store!')">🍎 App Store</a>
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora Android app — coming soon to Google Play!')">▷ Google Play</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Top Havens</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('kashmir')" class="footer-link">Kashmir Valley</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('goa')" class="footer-link">South Goa Serenity</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('rajasthan')" class="footer-link">Royal Rajasthan</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('alps')" class="footer-link">Swiss Matterhorn</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('iceland')" class="footer-link">Iceland Aurora</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home Overview</a></li>
+            <li><a href="destinations.html" class="footer-link">Curated Havens</a></li>
+            <li><a href="experiences.html" class="footer-link">Signatures</a></li>
+            <li><a href="budget-estimator.html" class="footer-link">Budget Engine</a></li>
+            <li><a href="interactive-map.html" class="footer-link">Map Highlights</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+        <div>
+          <h4 class="footer-col-title">Travel Moods</h4>
+          <ul class="footer-links-list">
+            <li><a href="destinations.html" class="footer-link">🏔 Alpine Thrills</a></li>
+            <li><a href="destinations.html" class="footer-link">🏖 Coastal Calm</a></li>
+            <li><a href="destinations.html" class="footer-link">🏰 Royal Heritage</a></li>
+            <li><a href="destinations.html" class="footer-link">🌌 Night Skies</a></li>
+            <li><a href="experiences.html" class="footer-link">✨ Ritual Moments</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Travel Dispatches</h4>
+          <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">Seasonal flight alerts, secret heritage stays, and route guides in your inbox.</p>
+          <form class="footer-newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Your explorer email..." required>
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="trust-row">
+        <span>🔒 Secure checkout</span>
+        <span>✔ Verified stays</span>
+        <span>🕒 24/7 concierge</span>
+        <span>💳 Visa · MC · UPI</span>
+        <span>⚡ Reply in ~2h</span>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>© <span data-year>2026</span> TRAVORA Inc. All rights reserved. Handcrafted with Pure HTML, CSS & Vanilla JavaScript.</div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span class="port-badge">PORT: 5500 READY</span><span>Zero TypeScript • Pure Artisan Craft</span>
+            <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ Top</button></div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="generic-modal" class="modal-backdrop" onclick="if(event.target === this) closeModal()">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      <div id="modal-inner-content"></div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+  <script src="/frontend/js/app.js"></script>
+</body>
+</html>

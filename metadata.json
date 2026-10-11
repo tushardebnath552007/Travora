@@ -1,0 +1,6 @@
+{
+  "name": "TRAVORA - Explore More. Travel Better.",
+  "description": "A modern travel discovery and trip-planning platform where travelers can explore tourist destinations, discover attractions, create personalized itineraries, save places, estimate trip budgets, and manage their travel plans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

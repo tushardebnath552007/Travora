@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - TRAVORA</title>
+  <meta name="description" content="Create a free Travora account to sync your wishlist, bucket list, budgets, and itineraries everywhere.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;900&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/css/style.css">
+</head>
+<body>
+
+  <div id="bg-viewport">
+    <div id="movable-bg" style="background-image: url('/assets/images/goa_sunset_palms_1791610909763.jpg');"></div>
+  </div>
+
+
+  <button class="menubar-fab" aria-label="Open menu">☰</button>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <div class="brand-emblem">🧭</div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">TRAVORA</span>
+          <span class="brand-tagline">Curated Odysseys</span>
+        </div>
+      </a>
+
+      <div style="background: linear-gradient(135deg, rgba(245,158,11,0.18) 0%, rgba(6,182,212,0.18) 100%); border: 1px solid rgba(245,158,11,0.4); border-radius: 12px; padding: 12px 14px; width: 100%;">
+        <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; color: #fde68a;">✨ JOIN THE CLUB</div>
+        <div style="font-weight: 800; color: #fff; font-size: 0.95rem;">Free forever, no card needed</div>
+      </div>
+
+      <div class="nav-account" id="nav-account" style="display: none;">
+        <div class="nav-account-avatar" id="nav-account-avatar">T</div>
+        <div class="nav-account-info">
+          <div class="nav-account-name" id="nav-account-name">Traveler</div>
+          <div class="nav-account-email" id="nav-account-email">you@example.com</div>
+        </div>
+        <button class="nav-account-out" onclick="logoutUser()" title="Sign out">⎋</button>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-item-link">Home</a></li>
+        <li><a href="destinations.html" class="nav-item-link">Destinations</a></li>
+        <li><a href="experiences.html" class="nav-item-link">Experiences</a></li>
+        <li><a href="budget-estimator.html" class="nav-item-link">Budget Estimator</a></li>
+        <li><a href="interactive-map.html" class="nav-item-link">Interactive Map</a></li>
+        <li><a href="wisdom.html" class="nav-item-link">Wisdom</a></li>
+        <li><a href="contact.html" class="nav-item-link">Contact</a></li>
+      </ul>
+
+      <div class="social-icons-bar">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+        <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter" title="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="action-btn-wishlist" onclick="openWishlistDrawer()" title="View Saved Destinations">
+          <span>♥ Wishlist</span>
+          <span class="wishlist-count-badge">0</span>
+        </button>
+        <button class="btn-plan-trip" onclick="window.location.href='index.html'">
+          <span>Back Home</span>
+          <span>→</span>
+        </button>
+        <button class="hamburger-btn" aria-label="Toggle Navigation">☰</button>
+          <div class="auth-row">
+            <a href="login.html" class="auth-btn-login">Log In</a>
+            <a href="signup.html" class="auth-btn-signup">Sign Up</a>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <nav class="page-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span>›</span><span>Sign Up</span>
+    </nav>
+
+    <section class="hero-section">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge"><span>✦</span> Expedition Club · Free Forever</div>
+          <h1 class="hero-title">JOIN THE <span class="hero-title-highlight">EXPEDITION</span></h1>
+          <p class="hero-description">
+            Create your free Travora account in under a minute — synced wishlists, bucket lists, budgets, and route sheets on every device you own.
+          </p>
+          <div class="hero-metrics-strip">
+            <div class="metric-item"><span class="metric-val">60s</span><span class="metric-lbl">To Join</span></div>
+            <div class="metric-item"><span class="metric-val">₹0</span><span class="metric-lbl">Forever Free</span></div>
+            <div class="metric-item"><span class="metric-val">∞</span><span class="metric-lbl">Synced Devices</span></div>
+          </div>
+        </div>
+        <div class="hero-glass-card">
+          <div class="card-header-tag">
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #f59e0b; text-transform: uppercase;">✦ Member Preview</span>
+            <span style="background: rgba(16,185,129,0.2); color: #34d399; font-size: 0.8rem; font-weight: 700; padding: 4px 10px; border-radius: 12px;">Free</span>
+          </div>
+          <img src="/assets/images/goa_sunset_palms_1791610909763.jpg" class="trip-card-img-preview" alt="Member journeys">
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: #fff; margin-bottom: 6px;">Your First Stamp Awaits</h3>
+          <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 18px;">Join 18,000+ members collecting havens, routes, and golden hours.</p>
+          <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px;">
+            <div>
+              <span style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Already a member?</span>
+              <div style="font-size: 1rem; font-weight: 800; color: #f59e0b;">Log in instead</div>
+            </div>
+            <a href="login.html" class="dest-btn-view">Log In →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="signup-box">
+      <div class="section-header">
+        <span class="section-tag">Sixty-Second Join</span>
+        <h2 class="section-title">CREATE YOUR ACCOUNT</h2>
+        <p class="section-subtitle">Just a name, an email, and a password — the concierge handles the rest.</p>
+      </div>
+      <div class="auth-grid">
+        <div class="auth-side">
+          <img src="/assets/images/rajasthan_fort_palace_1791610927685.jpg" alt="Royal Rajasthan">
+          <div class="auth-side-shade"></div>
+          <div class="auth-side-text">
+            <h3>Collect havens like stamps.</h3>
+            <p>Your first wishlist, your first route sheet, your first golden hour — all saved from day one.</p>
+          </div>
+        </div>
+        <div class="auth-card">
+          <div class="auth-tabs">
+            <a href="login.html">Log In</a>
+            <a href="signup.html" class="on">Sign Up</a>
+          </div>
+          <form id="signup-form">
+            <label class="auth-field"><span>Full Name</span><input type="text" id="signup-name" placeholder="Aarav Sen" required autocomplete="name"></label>
+            <label class="auth-field"><span>Email Address</span><input type="email" id="signup-email" placeholder="you@example.com" required autocomplete="email"></label>
+            <label class="auth-field"><span>Password · min 6 characters</span><span class="pass-wrap"><input type="password" id="signup-pass" placeholder="Choose a strong password" required autocomplete="new-password"><button type="button" class="pass-eye" data-eye="signup-pass" title="Show password">👁</button></span><span class="pass-meter"><div id="pass-bar"></div></span><span class="pass-hint" id="pass-hint"></span></label>
+            <label class="auth-field"><span>Confirm Password</span><span class="pass-wrap"><input type="password" id="signup-pass2" placeholder="Retype your password" required autocomplete="new-password"><button type="button" class="pass-eye" data-eye="signup-pass2" title="Show password">👁</button></span></label>
+            <label class="terms"><input type="checkbox" id="signup-terms"> <span>I agree to the <a href="wisdom.html">Terms & Fair-Use Policy</a></span></label>
+            <div class="auth-error" id="signup-error"></div>
+            <button type="submit" class="btn-plan-trip" style="width: 100%; justify-content: center;"><span>Create Free Account</span><span>→</span></button>
+          </form>
+          <div id="auth-signed" style="display: none; text-align: center; padding: 8px 0;">
+            <p id="auth-signed-msg" style="font-weight: 700; color: #fff;"></p>
+            <div class="auth-actions" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+              <button class="btn-plan-trip" id="auth-continue"><span>Continue →</span></button>
+              <button class="dest-btn-view" onclick="logoutUser()">Sign Out</button>
+            </div>
+          </div>
+          <p class="auth-switch">Already a member? <a href="login.html">Log in here →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="perks">
+      <div class="section-header">
+        <span class="section-tag">Membership Privileges</span>
+        <h2 class="section-title">YOUR FIRST-DAY KIT</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card"><div><div class="test-stars">♥</div><p class="test-quote"><strong>Starter wishlist.</strong> Five scout-picked havens pre-saved so your atlas never starts empty.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">🧭</div><p class="test-quote"><strong>Free route sheet.</strong> Your first custom itinerary — concierge-reviewed — on the house.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">📸</div><p class="test-quote"><strong>Dispatch access.</strong> Full-resolution gallery frames and print catalogue from day one.</p></div></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="faq">
+      <div class="section-header">
+        <span class="section-tag">Expert Guidance</span>
+        <h2 class="section-title">SIGNUP FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-header"><span>Is Travora membership really free?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Yes — accounts, syncing, estimates, and quotations are free forever. You pay only when you confirm a trip.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>What password rules apply?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Minimum 6 characters. Passwords are salted and SHA-256 hashed on the server — never stored or sent in plain text.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>Can I use one account on two phones?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Absolutely — log in on as many devices as you like. Everything syncs within seconds.</div></div>
+      </div>
+    </section>
+
+    <section class="page-section" style="padding-bottom: 30px;">
+      <div style="background: linear-gradient(135deg, rgba(245,158,11,0.15) 0%, rgba(6,182,212,0.15) 100%); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; backdrop-filter: blur(20px);">
+        <h2 style="font-family: var(--font-display); font-size: 2.8rem; color: #fff; margin-bottom: 16px;">FIRST STAMP IN 60 SECONDS</h2>
+        <p style="color: #cbd5e1; font-size: 1.2rem; max-width: 650px; margin: 0 auto 30px;">Join free, save your first haven, and price your first odyssey today.</p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="destinations.html" class="btn-hero-primary">Pick a First Haven →</a>
+          <a href="login.html" class="btn-hero-secondary">Log In Instead 🔑</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-link" style="margin-bottom: 16px;">
+            <div class="brand-emblem">🧭</div>
+            <div class="brand-text-wrap"><span class="brand-name">TRAVORA</span><span class="brand-tagline">Curated Odysseys</span></div>
+          </div>
+          <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 24px; max-width: 380px;">Artisanal travel discovery and trip-planning platform. Handcrafted for explorers seeking true cultural immersion.</p>
+          <div class="social-icons-bar">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter" title="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+            <div class="footer-contact">
+              <div>✉️ hello@travora.io</div>
+              <div>☎️ +91 98765 43210 · 24/7 concierge</div>
+              <div>📍 Connaught Place, New Delhi</div>
+            </div>
+            <div class="app-badges">
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora iOS app — coming soon to the App Store!')">🍎 App Store</a>
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora Android app — coming soon to Google Play!')">▷ Google Play</a>
+            </div>
+          </div>
+        <div>
+          <h4 class="footer-col-title">Top Havens</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('kashmir')" class="footer-link">Kashmir Valley</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('goa')" class="footer-link">South Goa Serenity</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('rajasthan')" class="footer-link">Royal Rajasthan</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('alps')" class="footer-link">Swiss Matterhorn</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('iceland')" class="footer-link">Iceland Aurora</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home Overview</a></li>
+            <li><a href="destinations.html" class="footer-link">Curated Havens</a></li>
+            <li><a href="experiences.html" class="footer-link">Signatures</a></li>
+            <li><a href="budget-estimator.html" class="footer-link">Budget Engine</a></li>
+            <li><a href="interactive-map.html" class="footer-link">Map Highlights</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+        <div>
+          <h4 class="footer-col-title">Travel Moods</h4>
+          <ul class="footer-links-list">
+            <li><a href="destinations.html" class="footer-link">🏔 Alpine Thrills</a></li>
+            <li><a href="destinations.html" class="footer-link">🏖 Coastal Calm</a></li>
+            <li><a href="destinations.html" class="footer-link">🏰 Royal Heritage</a></li>
+            <li><a href="destinations.html" class="footer-link">🌌 Night Skies</a></li>
+            <li><a href="experiences.html" class="footer-link">✨ Ritual Moments</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Travel Dispatches</h4>
+          <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">Seasonal flight alerts, secret heritage stays, and route guides in your inbox.</p>
+          <form class="footer-newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Your explorer email..." required>
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="trust-row">
+        <span>🔒 Secure checkout</span>
+        <span>✔ Verified stays</span>
+        <span>🕒 24/7 concierge</span>
+        <span>💳 Visa · MC · UPI</span>
+        <span>⚡ Reply in ~2h</span>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>© <span data-year>2026</span> TRAVORA Inc. All rights reserved. Handcrafted with Pure HTML, CSS & Vanilla JavaScript.</div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span class="port-badge">PORT: 5500 READY</span>
+          <span>Zero TypeScript • Pure Artisan Craft</span>
+            <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ Top</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="generic-modal" class="modal-backdrop" onclick="if(event.target === this) closeModal()">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      <div id="modal-inner-content"></div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+  <script src="/frontend/js/app.js"></script>
+</body>
+</html>

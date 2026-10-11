@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Talk to the Concierge | TRAVORA</title>
+  <meta name="description" content="Contact Travora: 24/7 concierge, email, phone, headquarters, and a direct message desk with 2-hour replies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;900&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/css/style.css">
+</head>
+<body>
+
+  <div id="bg-viewport">
+    <div id="movable-bg" style="background-image: url('/assets/images/hero_cinematic_travora_1791217691024.jpg');"></div>
+  </div>
+
+
+  <button class="menubar-fab" aria-label="Open menu">☰</button>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <div class="brand-emblem">🧭</div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">TRAVORA</span>
+          <span class="brand-tagline">Curated Odysseys</span>
+        </div>
+      </a>
+
+      <div style="background: linear-gradient(135deg, rgba(6,182,212,0.18) 0%, rgba(16,185,129,0.18) 100%); border: 1px solid rgba(6,182,212,0.4); border-radius: 12px; padding: 12px 14px; width: 100%;">
+        <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; color: #67e8f9;">✉ CONTACT DESK</div>
+        <div style="font-weight: 800; color: #fff; font-size: 0.95rem;">Humans reply within 2 hours</div>
+      </div>
+
+      <div class="nav-account" id="nav-account" style="display: none;">
+        <div class="nav-account-avatar" id="nav-account-avatar">T</div>
+        <div class="nav-account-info">
+          <div class="nav-account-name" id="nav-account-name">Traveler</div>
+          <div class="nav-account-email" id="nav-account-email">you@example.com</div>
+        </div>
+        <button class="nav-account-out" onclick="logoutUser()" title="Sign out">⎋</button>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-item-link">Home</a></li>
+        <li><a href="destinations.html" class="nav-item-link">Destinations</a></li>
+        <li><a href="experiences.html" class="nav-item-link">Experiences</a></li>
+        <li><a href="budget-estimator.html" class="nav-item-link">Budget Estimator</a></li>
+        <li><a href="interactive-map.html" class="nav-item-link">Interactive Map</a></li>
+        <li><a href="wisdom.html" class="nav-item-link">Wisdom</a></li>
+        <li><a href="contact.html" class="nav-item-link active">Contact</a></li>
+      </ul>
+
+      <div class="social-icons-bar">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+        <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter" title="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="action-btn-wishlist" onclick="openWishlistDrawer()" title="View Saved Destinations">
+          <span>♥ Wishlist</span>
+          <span class="wishlist-count-badge">0</span>
+        </button>
+        <button class="btn-plan-trip" onclick="window.location.href='destinations.html'">
+          <span>Explore Havens</span>
+          <span>→</span>
+        </button>
+        <button class="hamburger-btn" aria-label="Toggle Navigation">☰</button>
+          <div class="auth-row">
+            <a href="login.html" class="auth-btn-login">Log In</a>
+            <a href="signup.html" class="auth-btn-signup">Sign Up</a>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="under-nav-search-bar" id="under-nav-search">
+    <div class="search-inner-wrapper">
+      <div class="search-primary-row">
+        <div class="search-input-box">
+          <span class="search-icon-left">🔍</span>
+          <input type="text" id="under-nav-input" class="main-search-input" placeholder="Search destinations before you ask..." autocomplete="off">
+          <span class="search-kbd-hint">Press '/' to search</span>
+          <div id="search-dropdown" class="search-results-dropdown"></div>
+        </div>
+      </div>
+      <div class="search-filters-row">
+        <div class="category-filter-chips">
+          <span class="filter-chip active" data-category="all">All Havens</span>
+          <span class="filter-chip" data-category="mountains">🏔 Mountains & Alps</span>
+          <span class="filter-chip" data-category="beaches">🏖 Tropical Beaches</span>
+          <span class="filter-chip" data-category="heritage">🏰 Royal Forts & Heritage</span>
+          <span class="filter-chip" data-category="aurora">🌌 Northern Auroras</span>
+        </div>
+        <div class="quick-tags-prompt"><span>Prefer talking? Call anytime 👇</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <nav class="page-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span>›</span><span>Contact</span>
+    </nav>
+
+    <section class="hero-section">
+      <div class="hero-grid hero-flip">
+        <div>
+          <div class="hero-badge"><span>✦</span> Real Humans · Zero Bots</div>
+          <h1 class="hero-title">TALK TO THE <span class="hero-title-highlight">CONCIERGE</span></h1>
+          <p class="hero-description">
+            Trip questions, locked quotations, special occasions, or just wanderlust — write in and a dedicated specialist replies within 2 hours, around the clock.
+          </p>
+          <div class="hero-actions-row">
+            <a href="#message-desk" class="btn-hero-primary"><span>Send a Message</span><span>→</span></a>
+            <a href="#direct-lines" class="btn-hero-secondary"><span>Direct Lines</span><span>☎</span></a>
+          </div>
+          <div class="hero-metrics-strip">
+            <div class="metric-item"><span class="metric-val">~2h</span><span class="metric-lbl">Avg. Reply Time</span></div>
+            <div class="metric-item"><span class="metric-val">24/7</span><span class="metric-lbl">On-Trip Support</span></div>
+            <div class="metric-item"><span class="metric-val">4.9★</span><span class="metric-lbl">Support Rating</span></div>
+          </div>
+        </div>
+        <div class="hero-glass-card">
+          <div class="card-header-tag">
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #f59e0b; text-transform: uppercase;">✦ Fastest Route</span>
+            <span style="background: rgba(16,185,129,0.2); color: #34d399; font-size: 0.8rem; font-weight: 700; padding: 4px 10px; border-radius: 12px;">Online Now</span>
+          </div>
+          <img src="/assets/images/hero_cinematic_travora_1791217691024.jpg" class="trip-card-img-preview" alt="Concierge desk">
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: #fff; margin-bottom: 6px;">The Night Desk Never Sleeps</h3>
+          <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 18px;">Flight delayed at 2 AM? Chauffeur rerouted before you land. That is the job.</p>
+          <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px;">
+            <div>
+              <span style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Concierge hotline</span>
+              <div style="font-family: var(--font-mono); font-size: 1.15rem; font-weight: 800; color: #f59e0b;">+91 98765 43210</div>
+            </div>
+            <a href="#message-desk" class="dest-btn-view">Write Instead →</a>
+          </div>
+        </div>
+      </div>
+      <div class="hotline-strip">
+        <div><div style="font-size: .75rem; color: #64748b; text-transform: uppercase;">Concierge hotline · 24/7</div><b>+91 98765 43210</b></div>
+        <div style="color: #cbd5e1; font-size: .9rem;">Voice & WhatsApp · avg. reply ~2h</div>
+        <a href="#message-desk" class="dest-btn-view">Write Instead →</a>
+      </div>
+    </section>
+
+    <section class="page-section" id="direct-lines">
+      <div class="section-header">
+        <span class="section-tag">Direct Lines</span>
+        <h2 class="section-title">FOUR DOORS, ALWAYS OPEN</h2>
+        <p class="section-subtitle">Pick the channel that suits your hour — all reach the same human desk.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card"><div><div class="test-stars">✉️</div><p class="test-quote"><strong>hello@travora.io</strong><br>Quotations, itineraries, and love letters. Answered within 2 hours.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">☎️</div><p class="test-quote"><strong>+91 98765 43210</strong><br>Voice & WhatsApp, 24/7. On-trip guests jump the queue automatically.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">📍</div><p class="test-quote"><strong>Connaught Place, New Delhi</strong><br>Walk in Mon–Sat, 10 AM–7 PM. Kahwa is on the house.</p></div></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="message-desk">
+      <div class="section-header">
+        <span class="section-tag">Message Desk</span>
+        <h2 class="section-title">SEND A MESSAGE</h2>
+        <p class="section-subtitle">Lands directly in the concierge inbox — no bots, no ticket maze.</p>
+      </div>
+      <div class="calculator-box" style="grid-template-columns: 1fr;">
+        <form onsubmit="handleContact(event)">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <label class="auth-field"><span>Your Name</span><input type="text" id="contact-name" placeholder="Aarav Sen" required></label>
+            <label class="auth-field"><span>Email Address</span><input type="email" id="contact-email" placeholder="you@example.com" required></label>
+          </div>
+          <label class="auth-field"><span>Topic</span>
+            <select id="contact-subject" style="width: 100%; background: rgba(255,255,255,0.06); border: 1px solid var(--border-glass); border-radius: 12px; padding: 13px 16px; color: #fff; font-size: 1rem; outline: none; font-family: inherit;">
+              <option value="trip" style="background: #0f172a;">Plan my trip</option>
+              <option value="quote" style="background: #0f172a;">Locked quotation</option>
+              <option value="support" style="background: #0f172a;">On-trip support</option>
+              <option value="feedback" style="background: #0f172a;">Feedback & love</option>
+              <option value="other" style="background: #0f172a;">Anything else</option>
+            </select>
+          </label>
+          <label class="auth-field"><span>Your Message</span><textarea id="contact-msg" placeholder="Tell us dates, dream haven, travelers, and budget..." required></textarea></label>
+          <button type="submit" class="btn-plan-trip" style="width: 100%; justify-content: center;"><span>Send to Concierge</span><span>→</span></button>
+        </form>
+      </div>
+    </section>
+
+    <section class="page-section" id="faq">
+      <div class="section-header">
+        <span class="section-tag">Expert Guidance</span>
+        <h2 class="section-title">CONTACT FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-header"><span>How fast will I hear back?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Within 2 hours on average, day or night. On-trip emergencies jump the queue and reach a human in under two minutes.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>Can I meet the team in person?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Yes — our Connaught Place studio welcomes walk-ins Mon–Sat, 10 AM–7 PM. Bring your bucket list; kahwa is on us.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>Do you work with travel agents?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">We partner with select agencies for group departures. Write in with your credentials and routes for partner rates.</div></div>
+      </div>
+    </section>
+
+    <section class="page-section" style="padding-bottom: 30px;">
+      <div style="background: linear-gradient(135deg, rgba(6,182,212,0.15) 0%, rgba(16,185,129,0.15) 100%); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; backdrop-filter: blur(20px);">
+        <h2 style="font-family: var(--font-display); font-size: 2.8rem; color: #fff; margin-bottom: 16px;">FIRST REPLY IN ~2 HOURS</h2>
+        <p style="color: #cbd5e1; font-size: 1.2rem; max-width: 650px; margin: 0 auto 30px;">Or skip the wait — price any haven yourself in seconds.</p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="budget-estimator.html" class="btn-hero-primary">Estimate My Trip →</a>
+          <a href="destinations.html" class="btn-hero-secondary">Browse Havens 🌍</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-link" style="margin-bottom: 16px;">
+            <div class="brand-emblem">🧭</div>
+            <div class="brand-text-wrap"><span class="brand-name">TRAVORA</span><span class="brand-tagline">Curated Odysseys</span></div>
+          </div>
+          <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 24px; max-width: 380px;">Artisanal travel discovery and trip-planning platform. Handcrafted for explorers seeking true cultural immersion.</p>
+          <div class="social-icons-bar">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter" title="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+            <div class="footer-contact">
+              <div>✉️ hello@travora.io</div>
+              <div>☎️ +91 98765 43210 · 24/7 concierge</div>
+              <div>📍 Connaught Place, New Delhi</div>
+            </div>
+            <div class="app-badges">
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora iOS app — coming soon to the App Store!')">🍎 App Store</a>
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora Android app — coming soon to Google Play!')">▷ Google Play</a>
+            </div>
+          </div>
+        <div>
+          <h4 class="footer-col-title">Top Havens</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('kashmir')" class="footer-link">Kashmir Valley</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('goa')" class="footer-link">South Goa Serenity</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('rajasthan')" class="footer-link">Royal Rajasthan</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('alps')" class="footer-link">Swiss Matterhorn</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('iceland')" class="footer-link">Iceland Aurora</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Travel Moods</h4>
+          <ul class="footer-links-list">
+            <li><a href="destinations.html" class="footer-link">🏔 Alpine Thrills</a></li>
+            <li><a href="destinations.html" class="footer-link">🏖 Coastal Calm</a></li>
+            <li><a href="destinations.html" class="footer-link">🏰 Royal Heritage</a></li>
+            <li><a href="destinations.html" class="footer-link">🌌 Night Skies</a></li>
+            <li><a href="experiences.html" class="footer-link">✨ Ritual Moments</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home Overview</a></li>
+            <li><a href="destinations.html" class="footer-link">Curated Havens</a></li>
+            <li><a href="experiences.html" class="footer-link">Signatures</a></li>
+            <li><a href="budget-estimator.html" class="footer-link">Budget Engine</a></li>
+            <li><a href="interactive-map.html" class="footer-link">Map Highlights</a></li>
+            <li><a href="wisdom.html" class="footer-link">Travel Wisdom</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Travel Dispatches</h4>
+          <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">Seasonal flight alerts, secret heritage stays, and route guides in your inbox.</p>
+          <form class="footer-newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Your explorer email..." required>
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="trust-row">
+        <span>🔒 Secure checkout</span>
+        <span>✔ Verified stays</span>
+        <span>🕒 24/7 concierge</span>
+        <span>💳 Visa · MC · UPI</span>
+        <span>⚡ Reply in ~2h</span>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>© <span data-year>2026</span> TRAVORA Inc. All rights reserved. Handcrafted with Pure HTML, CSS & Vanilla JavaScript.</div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span class="port-badge">PORT: 5500 READY</span>
+          <span>Zero TypeScript • Pure Artisan Craft</span>
+            <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ Top</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="generic-modal" class="modal-backdrop" onclick="if(event.target === this) closeModal()">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      <div id="modal-inner-content"></div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+  <script src="/frontend/js/app.js"></script>
+</body>
+</html>

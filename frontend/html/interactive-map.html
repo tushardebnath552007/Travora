@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Map - Destination Explorer | TRAVORA</title>
+  <meta name="description" content="Explore destinations on the interactive Travora map: click coordinate pins for highlights, weather, and route blueprints.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;900&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/css/style.css">
+</head>
+<body data-theme="abyss">
+
+  <div id="bg-viewport">
+    <div id="movable-bg" style="background-image: url('/assets/images/grand_matterhorn_alps_1791222654485.jpg');"></div>
+  </div>
+
+
+  <button class="menubar-fab" aria-label="Open menu">☰</button>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <div class="brand-emblem">🧭</div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">TRAVORA</span>
+          <span class="brand-tagline">Curated Odysseys</span>
+        </div>
+      </a>
+
+      <div style="background: linear-gradient(135deg, rgba(6,182,212,0.18) 0%, rgba(99,102,241,0.18) 100%); border: 1px solid rgba(6,182,212,0.4); border-radius: 12px; padding: 12px 14px; width: 100%;">
+        <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; color: #67e8f9;">🛰 LIVE CARTOGRAPHY</div>
+        <div style="font-weight: 800; color: #fff; font-size: 0.95rem;">Click a pin, start a journey</div>
+      </div>
+
+      <div class="nav-account" id="nav-account" style="display: none;">
+        <div class="nav-account-avatar" id="nav-account-avatar">T</div>
+        <div class="nav-account-info">
+          <div class="nav-account-name" id="nav-account-name">Traveler</div>
+          <div class="nav-account-email" id="nav-account-email">you@example.com</div>
+        </div>
+        <button class="nav-account-out" onclick="logoutUser()" title="Sign out">⎋</button>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-item-link">Home</a></li>
+        <li><a href="destinations.html" class="nav-item-link">Destinations</a></li>
+        <li><a href="experiences.html" class="nav-item-link">Experiences</a></li>
+        <li><a href="budget-estimator.html" class="nav-item-link">Budget Estimator</a></li>
+        <li><a href="interactive-map.html" class="nav-item-link active">Interactive Map</a></li>
+        <li><a href="wisdom.html" class="nav-item-link">Wisdom</a></li>
+        <li><a href="contact.html" class="nav-item-link">Contact</a></li>
+      </ul>
+
+      <div class="social-icons-bar">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+        <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="action-btn-wishlist" onclick="openWishlistDrawer()" title="View Saved Destinations">
+          <span>♥ Wishlist</span>
+          <span class="wishlist-count-badge">0</span>
+        </button>
+        <button class="btn-plan-trip" onclick="window.location.href='destinations.html'">
+          <span>Explore Havens</span>
+          <span>→</span>
+        </button>
+        <button class="hamburger-btn" aria-label="Toggle Navigation">☰</button>
+          <div class="auth-row">
+            <a href="login.html" class="auth-btn-login">Log In</a>
+            <a href="signup.html" class="auth-btn-signup">Sign Up</a>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="under-nav-search-bar" id="under-nav-search">
+    <div class="search-inner-wrapper">
+      <div class="search-primary-row">
+        <div class="search-input-box">
+          <span class="search-icon-left">🔍</span>
+          <input type="text" id="under-nav-input" class="main-search-input" placeholder="Search pins by destination or coordinates..." autocomplete="off">
+          <span class="search-kbd-hint">Press '/' to search</span>
+          <div id="search-dropdown" class="search-results-dropdown"></div>
+        </div>
+      </div>
+      <div class="search-filters-row">
+        <div class="category-filter-chips">
+          <span class="filter-chip active" data-category="all">All Havens</span>
+          <span class="filter-chip" data-category="mountains">🏔 Mountains & Alps</span>
+          <span class="filter-chip" data-category="beaches">🏖 Tropical Beaches</span>
+          <span class="filter-chip" data-category="heritage">🏰 Royal Forts & Heritage</span>
+          <span class="filter-chip" data-category="aurora">🌌 Northern Auroras</span>
+        </div>
+        <div class="quick-tags-prompt"><span>Tip: click any glowing pin 👇</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <nav class="page-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span>›</span><span>Interactive Map</span>
+    </nav>
+
+    <section class="hero-section hero-slimline">
+      <div class="hero-slim">
+        <div>
+          <div class="hero-badge"><span>✦</span> Cartographic Visualizer · Live Pins</div>
+          <h1 class="hero-title">DESTINATION <span class="hero-title-highlight">MAP EXPLORER</span></h1>
+          <p class="hero-description">
+            Click any interactive coordinate pin to view region highlights, weather conditions, and direct route blueprints — then dive into full guides.
+          </p>
+          <div class="hero-actions-row">
+            <a href="#map-board" class="btn-hero-primary"><span>Open the Map</span><span>→</span></a>
+            <a href="#route-blueprints" class="btn-hero-secondary"><span>Route Blueprints</span><span>🗺</span></a>
+          </div>
+          <div class="scroll-cue">Scroll for the living atlas ↓</div>
+        </div>
+        <div class="hero-slim-side">
+          <div class="hero-badge" style="margin-bottom: 0;"><span>✦</span> Chart Status · Live</div>
+          <div class="side-coords">34.08° N · Kashmir<br>26.91° N · Rajasthan<br>15.29° N · Goa<br>45.97° N · Matterhorn<br>64.14° N · Iceland</div>
+          <div style="display: flex; gap: 26px;">
+            <div class="metric-item"><span class="metric-val">5</span><span class="metric-lbl">Pins</span></div>
+            <div class="metric-item"><span class="metric-val">3</span><span class="metric-lbl">Continents</span></div>
+            <div class="metric-item"><span class="metric-val">360°</span><span class="metric-lbl">Coverage</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="map-board">
+      <div class="section-header">
+        <span class="section-tag">Abyss Chart Room</span>
+        <h2 class="section-title">THE LIVING ATLAS</h2>
+        <p class="section-subtitle">A deep-sea chart of five flagship coasts and ranges. Hover for flash dossiers, click to open the full intelligence file — highlights, weather, duration, pricing, and the scout-approved blueprint.</p>
+      </div>
+      <div class="map-explorer-grid">
+        <div class="map-board-v2" data-map-explorer data-map-variant="full">
+          <div class="map-grid-overlay"></div>
+          <div class="map-compass"><span class="map-compass-star">▲</span><span class="map-compass-lbl">N</span></div>
+          <div class="map-pin" style="top: 22%; left: 32%;" title="Kashmir Valley"
+            data-name="Kashmir Valley" data-coords="34.08° N · 74.79° E" data-weather="8–28°C · Alpine sun" data-months="Apr – Jun" data-days="6 Days" data-price="₹18,500" data-route="Srinagar → Gulmarg → Pahalgam" data-img="/assets/images/dest_kashmir_paradise_1791217715653.jpg" data-dest="kashmir"
+            data-blurb="Shikara dawns on Dal Lake, saffron fields of Pampore and the Gulmarg gondola to 3,980m.">
+            <div class="map-pin-pulse"></div><span>🏔</span><div class="map-pin-label">Kashmir · 34.08° N</div>
+            <div class="map-pin-tip"><h5>Kashmir Valley</h5><p>Shikara dawns · Gulmarg gondola</p><span>8–28°C · Apr – Jun</span></div>
+          </div>
+          <div class="map-pin" style="top: 42%; left: 24%;" title="Rajasthan Palaces"
+            data-name="Royal Rajasthan" data-coords="26.91° N · 75.79° E" data-weather="12–32°C · Desert gold" data-months="Oct – Mar" data-days="7–8 Days" data-price="₹16,200" data-route="Jodhpur → Udaipur → Jaisalmer" data-img="/assets/images/rajasthan_fort_palace_1791610927685.jpg" data-dest="rajasthan"
+            data-blurb="Illuminated Mehrangarh ramparts, Udaipur lake palaces and camel safaris on Sam dunes.">
+            <div class="map-pin-pulse"></div><span>🏰</span><div class="map-pin-label">Rajasthan · 26.91° N</div>
+            <div class="map-pin-tip"><h5>Royal Rajasthan</h5><p>Fort twilights · Desert galas</p><span>12–32°C · Oct – Mar</span></div>
+          </div>
+          <div class="map-pin" style="top: 68%; left: 28%;" title="South Goa Coast"
+            data-name="South Goa Coast" data-coords="15.29° N · 74.12° E" data-weather="22–33°C · Balmy coast" data-months="Nov – Mar" data-days="5 Days" data-price="₹12,800" data-route="Palolem → Cola → Agonda" data-img="/assets/images/goa_sunset_palms_1791610909763.jpg" data-dest="goa"
+            data-blurb="Lantern-lit beach shacks, dolphin coves, Portuguese mansions and Cola's emerald lagoon.">
+            <div class="map-pin-pulse"></div><span>🏖</span><div class="map-pin-label">Goa · 15.29° N</div>
+            <div class="map-pin-tip"><h5>South Goa Coast</h5><p>Lantern shacks · Hidden coves</p><span>22–33°C · Nov – Mar</span></div>
+          </div>
+          <div class="map-pin" style="top: 25%; left: 74%;" title="Swiss Alps"
+            data-name="Swiss Matterhorn" data-coords="45.97° N · 7.65° E" data-weather="5–22°C · Crisp alpine" data-months="Jun – Sep" data-days="7 Days" data-price="₹1,45,000" data-route="Zermatt → Gornergrat → Glacier Paradise" data-img="/assets/images/grand_matterhorn_alps_1791222654485.jpg" data-dest="alps"
+            data-blurb="Golden-hour reflections at Stellisee, Gornergrat railway panoramas and fondue in car-free Zermatt.">
+            <div class="map-pin-pulse"></div><span>❄</span><div class="map-pin-label">Swiss Matterhorn · 45.97° N</div>
+            <div class="map-pin-tip"><h5>Swiss Matterhorn</h5><p>Glacier rails · Mirror lakes</p><span>5–22°C · Jun – Sep</span></div>
+          </div>
+          <div class="map-pin" style="top: 15%; left: 62%;" title="Iceland Aurora"
+            data-name="South Iceland" data-coords="64.14° N · 21.90° W" data-weather="-5–10°C · Arctic night" data-months="Sep – Mar" data-days="6 Days" data-price="₹1,28,000" data-route="Reykjavik → Vik → Jökulsárlón" data-img="/assets/images/dest_iceland_aurora_1791217726046.jpg" data-dest="iceland"
+            data-blurb="Emerald aurora storms, Blue Lagoon soaks, glacier-lagoon safaris and Vik's basalt shores.">
+            <div class="map-pin-pulse"></div><span>🌌</span><div class="map-pin-label">Iceland · 64.14° N</div>
+            <div class="map-pin-tip"><h5>South Iceland</h5><p>Aurora storms · Ice lagoons</p><span>-5–10°C · Sep – Mar</span></div>
+          </div>
+          <div class="map-readout" data-map-readout>◉ Move across the chart…</div>
+          <div class="map-legend"><span><i>●</i> Flagship haven</span><span><i>◐</i> Click pin = dossier</span></div>
+        </div>
+        <aside class="map-detail-card" data-map-detail></aside>
+      </div>
+    </section>
+
+    <section class="page-section" id="region-spotlights">
+      <div class="section-header">
+        <span class="section-tag">Pin Dossiers</span>
+        <h2 class="section-title">REGION SPOTLIGHTS</h2>
+        <p class="section-subtitle">What each glowing pin hides: best months, signature views, and ideal durations.</p>
+      </div>
+      <div class="destinations-grid">
+        <div class="dest-card" data-category="mountains">
+          <div class="dest-card-media"><img src="/assets/images/dest_kashmir_paradise_1791217715653.jpg" class="dest-card-img" alt="Kashmir"><span class="dest-badge-category">34.08° N</span></div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>🌡 8–28°C · Apr–Oct</span><span>⭐ 4.9</span></div>
+            <h3 class="dest-card-title">Kashmir Valley</h3>
+            <p class="dest-card-tagline">Shikara mornings, saffron fields of Pampore, Aru meadows, and Gulmarg's gondola to 3,980m.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Ideal duration</span><div class="dest-price-val">6 Days</div></div><button class="dest-btn-view" onclick="openDestinationModal('kashmir')">Open Guide →</button></div>
+          </div>
+        </div>
+        <div class="dest-card" data-category="heritage">
+          <div class="dest-card-media"><img src="/assets/images/rajasthan_fort_palace_1791610927685.jpg" class="dest-card-img" alt="Rajasthan"><span class="dest-badge-category">26.91° N</span></div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>🌡 12–32°C · Oct–Mar</span><span>⭐ 5.0</span></div>
+            <h3 class="dest-card-title">Royal Rajasthan</h3>
+            <p class="dest-card-tagline">Mehrangarh's illuminated ramparts, Udaipur lake palaces, and Sam-dune camel safaris at sunset.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Ideal duration</span><div class="dest-price-val">7–8 Days</div></div><button class="dest-btn-view" onclick="openDestinationModal('rajasthan')">Open Guide →</button></div>
+          </div>
+        </div>
+        <div class="dest-card" data-category="beaches">
+          <div class="dest-card-media"><img src="/assets/images/goa_sunset_palms_1791610909763.jpg" class="dest-card-img" alt="Goa"><span class="dest-badge-category">15.29° N</span></div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>🌡 22–33°C · Nov–Mar</span><span>⭐ 4.8</span></div>
+            <h3 class="dest-card-title">South Goa Coast</h3>
+            <p class="dest-card-tagline">Silent-noise parties, dolphin coves, Portuguese mansions, and Cola's emerald lagoon.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Ideal duration</span><div class="dest-price-val">5 Days</div></div><button class="dest-btn-view" onclick="openDestinationModal('goa')">Open Guide →</button></div>
+          </div>
+        </div>
+        <div class="dest-card" data-category="mountains">
+          <div class="dest-card-media"><img src="/assets/images/grand_matterhorn_alps_1791222654485.jpg" class="dest-card-img" alt="Alps"><span class="dest-badge-category">45.97° N</span></div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>🌡 5–22°C · Jun–Sep</span><span>⭐ 4.9</span></div>
+            <h3 class="dest-card-title">Swiss Matterhorn</h3>
+            <p class="dest-card-tagline">Stellisee reflections, Gornergrat railway, glacier paradise ice palace, car-free Zermatt.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Ideal duration</span><div class="dest-price-val">7 Days</div></div><button class="dest-btn-view" onclick="openDestinationModal('alps')">Open Guide →</button></div>
+          </div>
+        </div>
+        <div class="dest-card" data-category="aurora">
+          <div class="dest-card-media"><img src="/assets/images/dest_iceland_aurora_1791217726046.jpg" class="dest-card-img" alt="Iceland"><span class="dest-badge-category">64.14° N</span></div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>🌡 -5–10°C · Sep–Mar</span><span>⭐ 4.9</span></div>
+            <h3 class="dest-card-title">South Iceland</h3>
+            <p class="dest-card-tagline">Jökulsárlón icebergs, Reynisfjara basalt stacks, Blue Lagoon soaks, aurora forecasts nightly.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Ideal duration</span><div class="dest-price-val">6 Days</div></div><button class="dest-btn-view" onclick="openDestinationModal('iceland')">Open Guide →</button></div>
+          </div>
+        </div>
+        <div class="dest-card" data-category="mountains">
+          <div class="dest-card-media"><img src="/assets/images/dest_patagonia_torres_1791217704007.jpg" class="dest-card-img" alt="Patagonia"><span class="dest-badge-category">50.94° S</span></div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>🌡 0–15°C · Nov–Mar</span><span>⭐ 4.8</span></div>
+            <h3 class="dest-card-title">Torres del Paine</h3>
+            <p class="dest-card-tagline">Base-tower trek, Grey Glacier kayaking, guanaco steppe, and estancia asados under stars.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Ideal duration</span><div class="dest-price-val">8 Days</div></div><button class="dest-btn-view" onclick="showToast('Patagonia expeditions open November–March!')">Notify Me →</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="route-blueprints">
+      <div class="section-header">
+        <span class="section-tag">Cartographer's Desk</span>
+        <h2 class="section-title">SAMPLE ROUTE BLUEPRINTS</h2>
+        <p class="section-subtitle">How pins connect into journeys — three scout-approved arcs.</p>
+      </div>
+      <div class="calculator-box" style="grid-template-columns: 1fr;">
+        <div class="calc-breakdown-list">
+          <div class="breakdown-row"><span>🏔 Srinagar → Gulmarg → Pahalgam loop</span><span>6 Days · ₹51,600</span></div>
+          <div class="breakdown-row"><span>🏖 Palolem → Cola → Agonda coast crawl</span><span>5 Days · ₹44,200</span></div>
+          <div class="breakdown-row"><span>🏰 Jodhpur → Udaipur → Jaisalmer royal arc</span><span>8 Days · ₹72,400</span></div>
+          <div class="breakdown-row"><span>❄ Zermatt → Gornergrat → Glacier Paradise</span><span>7 Days · ₹3,10,000</span></div>
+          <div class="breakdown-row"><span>🌌 Reykjavik → Vik → Jökulsárlón ring</span><span>6 Days · ₹2,85,000</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="how-to-read">
+      <div class="section-header">
+        <span class="section-tag">Chart Primer</span>
+        <h2 class="section-title">HOW TO READ THIS CHART</h2>
+        <p class="section-subtitle">Thirty seconds to full cartographic literacy.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card"><div><div class="test-stars">01</div><p class="test-quote"><strong>Hover to scan.</strong> Sweep the cursor across the board — the readout decodes live coordinates beneath it.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">02</div><p class="test-quote"><strong>Click to dossier.</strong> Each pin opens its intelligence file: weather, months, duration, pricing, blueprint.</p></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">03</div><p class="test-quote"><strong>Act on intel.</strong> Open the full guide or price the route — the dossier buttons carry context forward.</p></div></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="voices">
+      <div class="section-header">
+        <span class="section-tag">Voices of Voyagers</span>
+        <h2 class="section-title">NAVIGATORS APPROVE</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card"><div><div class="test-stars">★★★★★</div><p class="test-quote">"The map pins matched reality perfectly — every viewpoint was exactly where promised."</p></div><div class="test-author-row"><div class="test-avatar">AR</div><div><div class="test-author-name">Aarav & Riya Sen</div><div class="test-author-role">Kashmir Loop · 6 Days</div></div></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">★★★★★</div><p class="test-quote">"Ring-road blueprint saved us hours daily. The glacier lagoon at 7 AM was empty!"</p></div><div class="test-author-row"><div class="test-avatar">DO</div><div><div class="test-author-name">Daniel Okafor</div><div class="test-author-role">Iceland Ring · 6 Days</div></div></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">★★★★★</div><p class="test-quote">"Coast crawl sequencing was genius — each beach better than the last."</p></div><div class="test-author-row"><div class="test-avatar">SK</div><div><div class="test-author-name">Siddharth Kapoor</div><div class="test-author-role">Goa Crawl · 5 Days</div></div></div></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="faq">
+      <div class="section-header">
+        <span class="section-tag">Expert Guidance</span>
+        <h2 class="section-title">MAP FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-header"><span>Do pins work offline on the road?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Yes — your confirmed route sheet includes offline coordinates, plus your chauffeur carries live navigation throughout.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>Can I add custom stops to a blueprint?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Absolutely. The concierge re-sequences drive times and permits around any custom halt you request.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>How current is the weather data?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Your on-trip concierge monitors 72-hour mountain and coastal forecasts and reorders days to chase clear skies.</div></div>
+      </div>
+    </section>
+
+    <section class="page-section" style="padding-bottom: 30px;">
+      <div style="background: linear-gradient(135deg, rgba(6,182,212,0.15) 0%, rgba(99,102,241,0.15) 100%); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; backdrop-filter: blur(20px);">
+        <h2 style="font-family: var(--font-display); font-size: 2.8rem; color: #fff; margin-bottom: 16px;">PIN IT, THEN LIVE IT</h2>
+        <p style="color: #cbd5e1; font-size: 1.2rem; max-width: 650px; margin: 0 auto 30px;">Turn a favorite pin into a fully permitted, chauffeur-driven reality.</p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="destinations.html" class="btn-hero-primary">Browse Destinations →</a>
+          <a href="budget-estimator.html" class="btn-hero-secondary">Price the Route 📊</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-link" style="margin-bottom: 16px;">
+            <div class="brand-emblem">🧭</div>
+            <div class="brand-text-wrap"><span class="brand-name">TRAVORA</span><span class="brand-tagline">Curated Odysseys</span></div>
+          </div>
+          <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 24px; max-width: 380px;">Artisanal travel discovery and trip-planning platform. Handcrafted for explorers seeking true cultural immersion.</p>
+          <div class="social-icons-bar">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <div class="footer-contact">
+              <div>✉️ hello@travora.io</div>
+              <div>☎️ +91 98765 43210 · 24/7 concierge</div>
+              <div>📍 Connaught Place, New Delhi</div>
+            </div>
+            <div class="app-badges">
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora iOS app — coming soon to the App Store!')">🍎 App Store</a>
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora Android app — coming soon to Google Play!')">▷ Google Play</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Top Havens</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('kashmir')" class="footer-link">Kashmir Valley</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('goa')" class="footer-link">South Goa Serenity</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('rajasthan')" class="footer-link">Royal Rajasthan</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('alps')" class="footer-link">Swiss Matterhorn</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('iceland')" class="footer-link">Iceland Aurora</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home Overview</a></li>
+            <li><a href="destinations.html" class="footer-link">Curated Havens</a></li>
+            <li><a href="experiences.html" class="footer-link">Signatures</a></li>
+            <li><a href="budget-estimator.html" class="footer-link">Budget Engine</a></li>
+            <li><a href="interactive-map.html" class="footer-link">Map Highlights</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+        <div>
+          <h4 class="footer-col-title">Travel Moods</h4>
+          <ul class="footer-links-list">
+            <li><a href="destinations.html" class="footer-link">🏔 Alpine Thrills</a></li>
+            <li><a href="destinations.html" class="footer-link">🏖 Coastal Calm</a></li>
+            <li><a href="destinations.html" class="footer-link">🏰 Royal Heritage</a></li>
+            <li><a href="destinations.html" class="footer-link">🌌 Night Skies</a></li>
+            <li><a href="experiences.html" class="footer-link">✨ Ritual Moments</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Travel Dispatches</h4>
+          <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">Seasonal flight alerts, secret heritage stays, and route guides in your inbox.</p>
+          <form class="footer-newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Your explorer email..." required>
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="trust-row">
+        <span>🔒 Secure checkout</span>
+        <span>✔ Verified stays</span>
+        <span>🕒 24/7 concierge</span>
+        <span>💳 Visa · MC · UPI</span>
+        <span>⚡ Reply in ~2h</span>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>© <span data-year>2026</span> TRAVORA Inc. All rights reserved. Handcrafted with Pure HTML, CSS & Vanilla JavaScript.</div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span class="port-badge">PORT: 5500 READY</span><span>Zero TypeScript • Pure Artisan Craft</span>
+            <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ Top</button></div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="generic-modal" class="modal-backdrop" onclick="if(event.target === this) closeModal()">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      <div id="modal-inner-content"></div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+  <script src="/frontend/js/app.js"></script>
+</body>
+</html>

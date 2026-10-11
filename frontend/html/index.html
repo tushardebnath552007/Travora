@@ -1,0 +1,693 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRAVORA - Explore More. Travel Better.</title>
+    <meta name="description" content="Handcrafted luxury travel discovery and trip-planning platform. Explore breathtaking tourist destinations, live budget estimators, and bespoke itineraries." />
+    <meta property="og:title" content="TRAVORA - Explore More. Travel Better." />
+    <meta property="og:description" content="Handcrafted luxury travel discovery and trip-planning platform with movable panoramic photographic backdrops." />
+    <meta property="og:type" content="website" />
+    
+    <!-- Stylish Typography via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;900&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Handcrafted Artisan CSS -->
+    <link rel="stylesheet" href="/frontend/css/style.css" />
+  </head>
+  <body>
+
+    <!-- ====================================================================
+         1. MOVABLE PANORAMIC BACKGROUND VIEWPORT
+         ==================================================================== -->
+    <div id="bg-viewport">
+      <div id="movable-bg" style="background-image: url('/assets/images/grand_matterhorn_alps_1791222654485.jpg');"></div>
+    </div>
+
+    <!-- ====================================================================
+         2. FIXED NAVIGATION BAR (Catchy, Single Bar, No Nested Nav)
+         ==================================================================== -->
+    <button class="menubar-fab" aria-label="Open menu">☰</button>
+    <header class="site-header">
+      <div class="nav-container">
+        <!-- Brand Monogram & Logo -->
+        <a href="#hero" class="brand-link">
+          <div class="brand-emblem">🧭</div>
+          <div class="brand-text-wrap">
+            <span class="brand-name">TRAVORA</span>
+            <span class="brand-tagline">Curated Odysseys</span>
+          </div>
+        </a>
+
+        <div style="background: linear-gradient(135deg, rgba(245,158,11,0.18) 0%, rgba(6,182,212,0.18) 100%); border: 1px solid rgba(245,158,11,0.4); border-radius: 12px; padding: 12px 14px; width: 100%;">
+          <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; color: #fde68a;">✦ TRAVORA HOME</div>
+          <div style="font-weight: 800; color: #fff; font-size: 0.95rem;">Begin every odyssey here</div>
+        </div>
+
+        <!-- Main Navigation Links -->
+        <div class="nav-account" id="nav-account" style="display: none;">
+          <div class="nav-account-avatar" id="nav-account-avatar">T</div>
+          <div class="nav-account-info">
+            <div class="nav-account-name" id="nav-account-name">Traveler</div>
+            <div class="nav-account-email" id="nav-account-email">you@example.com</div>
+          </div>
+          <button class="nav-account-out" onclick="logoutUser()" title="Sign out">⎋</button>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-item-link active">Home</a></li>
+          <li><a href="destinations.html" class="nav-item-link">Destinations</a></li>
+          <li><a href="experiences.html" class="nav-item-link">Experiences</a></li>
+          <li><a href="budget-estimator.html" class="nav-item-link">Budget Estimator</a></li>
+          <li><a href="interactive-map.html" class="nav-item-link">Interactive Map</a></li>
+          <li><a href="wisdom.html" class="nav-item-link">Wisdom</a></li>
+          <li><a href="contact.html" class="nav-item-link">Contact</a></li>
+        </ul>
+
+        <!-- Social Media Icons in Catchy Header -->
+        <div class="social-icons-bar">
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram" title="Follow Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube" title="Watch YouTube 4K"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+          <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter" title="X / Twitter Updates"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+
+        <!-- Wishlist & Action Buttons -->
+        <div class="nav-actions">
+          <button class="action-btn-wishlist" onclick="openWishlistDrawer()" title="View Saved Destinations">
+            <span>♥ Wishlist</span>
+            <span class="wishlist-count-badge">0</span>
+          </button>
+          <button class="btn-plan-trip" onclick="openWishlistDrawer()">
+            <span>Plan Odyssey</span>
+            <span>→</span>
+          </button>
+          <button class="hamburger-btn" aria-label="Toggle Navigation">☰</button>
+          <div class="auth-row">
+            <a href="login.html" class="auth-btn-login">Log In</a>
+            <a href="signup.html" class="auth-btn-signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         3. SEARCH BAR LOCATED DIRECTLY UNDER NAVIGATION BAR
+         ==================================================================== -->
+    <section class="under-nav-search-bar" id="under-nav-search">
+      <div class="search-inner-wrapper">
+        <div class="search-primary-row">
+          <div class="search-input-box">
+            <span class="search-icon-left">🔍</span>
+            <input 
+              type="text" 
+              id="under-nav-input" 
+              class="main-search-input" 
+              placeholder="Search dream havens, activities, snow trails, beaches, or historic citadels..." 
+              autocomplete="off"
+            />
+            <span class="search-kbd-hint">Press '/' to search</span>
+            <div id="search-dropdown" class="search-results-dropdown"></div>
+          </div>
+        </div>
+
+        <div class="search-filters-row">
+          <div class="category-filter-chips">
+            <span class="filter-chip active" data-category="all">All Havens</span>
+            <span class="filter-chip" data-category="mountains">🏔 Mountains & Alps</span>
+            <span class="filter-chip" data-category="beaches">🏖 Tropical Beaches</span>
+            <span class="filter-chip" data-category="heritage">🏰 Royal Forts & Heritage</span>
+            <span class="filter-chip" data-category="aurora">🌌 Northern Auroras</span>
+          </div>
+
+          <div class="quick-tags-prompt">
+            <span>Trending:</span>
+            <span class="quick-tag-link" onclick="setQuickSearch('Kashmir')">Kashmir</span> ·
+            <span class="quick-tag-link" onclick="setQuickSearch('Goa')">Goa</span> ·
+            <span class="quick-tag-link" onclick="setQuickSearch('Rajasthan')">Rajasthan</span> ·
+            <span class="quick-tag-link" onclick="setQuickSearch('Alps')">Swiss Alps</span> ·
+            <span class="quick-tag-link" onclick="setQuickSearch('Iceland')">Iceland</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. LONG INDEX PAGE MAIN CONTENT
+         ==================================================================== -->
+    <main class="main-content">
+
+      <!-- SECTION 1: HERO SHOWCASE -->
+      <section class="hero-section" id="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge">
+              <span>✦</span> Handcrafted Expeditions & Bespoke Journeys
+            </div>
+            <h1 class="hero-title">
+              JOURNEY BEYOND
+              <span class="hero-title-highlight">THE ORDINARY</span>
+            </h1>
+            <p class="hero-description">
+              Immerse yourself in handpicked destinations around the globe. From serene Himalayan shikara rides and twilight desert palaces to alpine summits, plan your lifetime memories with artisanal grace.
+            </p>
+            <div class="hero-actions-row">
+              <a href="destinations.html" class="btn-hero-primary">
+                <span>Explore Curated Havens</span>
+                <span>→</span>
+              </a>
+              <a href="budget-estimator.html" class="btn-hero-secondary">
+                <span>Estimate Trip Budget</span>
+                <span>📊</span>
+              </a>
+            </div>
+            <div class="hero-metrics-strip">
+              <div class="metric-item">
+                <span class="metric-val">120+</span>
+                <span class="metric-lbl">Curated Havens</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">4.9★</span>
+                <span class="metric-lbl">Explorer Rating</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">18,500+</span>
+                <span class="metric-lbl">Happy Nomads</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right Floating Preview Card -->
+          <div class="hero-glass-card">
+            <div class="card-header-tag">
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #f59e0b; text-transform: uppercase;">✦ Spotlight Destination</span>
+              <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.8rem; font-weight: 700; padding: 4px 10px; border-radius: 12px;">Staff Favorite</span>
+            </div>
+            <img src="/assets/images/dest_kashmir_paradise_1791217715653.jpg" class="trip-card-img-preview" alt="Kashmir Dal Lake" />
+            <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: #fff; margin-bottom: 6px;">Kashmir Valley Odyssey</h3>
+            <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 18px;">6 Days · Dal Lake Shikara, Gulmarg Snow Peak Gondola & Pine Valleys</p>
+            <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px;">
+              <div>
+                <span style="font-size: 0.75rem; color: #64748b; text-transform: uppercase;">Starting from</span>
+                <div style="font-family: var(--font-mono); font-size: 1.3rem; font-weight: 800; color: #f59e0b;">₹18,500</div>
+              </div>
+              <button class="dest-btn-view" onclick="openDestinationModal('kashmir')">View Details →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: CURATED DESTINATIONS (Long Showcase) -->
+      <section class="page-section" id="destinations">
+        <div class="section-header">
+          <span class="section-tag">Iconic Escapes</span>
+          <h2 class="section-title">HANDCRAFTED HAVENS</h2>
+          <p class="section-subtitle">
+            Every destination is audited for exceptional character, safety, and unforgettable memories. Filter by style or explore all.
+          </p>
+        </div>
+        <div class="destinations-grid" id="destinations-container">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
+      </section>
+
+      <!-- SECTION 3: CURATED ARTISAN EXPERIENCES -->
+      <section class="page-section" id="experiences">
+        <div class="section-header">
+          <span class="section-tag">Sensory Wonders</span>
+          <h2 class="section-title">SIGNATURE EXPERIENCES</h2>
+          <p class="section-subtitle">
+            Beyond ordinary sightseeing: immerse yourself in moments that stay with you forever.
+          </p>
+        </div>
+        <div class="destinations-grid">
+          <div class="dest-card" data-category="mountains">
+            <div class="dest-card-media">
+              <img src="/assets/images/dest_kashmir_paradise_1791217715653.jpg" class="dest-card-img" alt="Dawn Shikara" />
+              <span class="dest-badge-category">Serenity</span>
+            </div>
+            <div class="dest-card-content">
+              <div class="dest-meta-row">
+                <span>📍 Srinagar, Kashmir</span>
+                <span>⭐ 4.9 · Dawn Hours</span>
+              </div>
+              <h3 class="dest-card-title">Dawn Shikara Floating Market</h3>
+              <p class="dest-card-tagline">Glide over still lotus waters at 5:30 AM as local boat vendors trade fresh saffron flowers, artisan woodcrafts, and steaming kahwa tea.</p>
+              <div class="dest-card-footer">
+                <div>
+                  <span class="dest-price-label">Experience Cost</span>
+                  <div class="dest-price-val">₹2,400</div>
+                </div>
+                <button class="dest-btn-view" onclick="showToast('Experience added to planner!')">Book Slot</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dest-card" data-category="beaches">
+            <div class="dest-card-media">
+              <img src="/assets/images/goa_sunset_palms_1791610909763.jpg" class="dest-card-img" alt="Lantern Beach Shack" />
+              <span class="dest-badge-category">Bohemian</span>
+            </div>
+            <div class="dest-card-content">
+              <div class="dest-meta-row">
+                <span>📍 Palolem, South Goa</span>
+                <span>⭐ 4.8 · Twilight</span>
+              </div>
+              <h3 class="dest-card-title">Lantern-Lit Bohemian Beach Feast</h3>
+              <p class="dest-card-tagline">Dine barefoot on soft golden sands under woven bamboo lanterns as acoustic guitar melodies merge with soothing Arabian ocean waves.</p>
+              <div class="dest-card-footer">
+                <div>
+                  <span class="dest-price-label">Experience Cost</span>
+                  <div class="dest-price-val">₹3,800</div>
+                </div>
+                <button class="dest-btn-view" onclick="showToast('Experience added to planner!')">Book Slot</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dest-card" data-category="heritage">
+            <div class="dest-card-media">
+              <img src="/assets/images/rajasthan_fort_palace_1791610927685.jpg" class="dest-card-img" alt="Mehrangarh Twilight" />
+              <span class="dest-badge-category">Royal</span>
+            </div>
+            <div class="dest-card-content">
+              <div class="dest-meta-row">
+                <span>📍 Jodhpur & Udaipur</span>
+                <span>⭐ 5.0 · Evening</span>
+              </div>
+              <h3 class="dest-card-title">Twilight Rooftop Palace Banquet</h3>
+              <p class="dest-card-tagline">Savor authentic royal Rajasthani recipes cooked by ancestral palace chefs with panoramic views of illuminated citadels under desert twilight.</p>
+              <div class="dest-card-footer">
+                <div>
+                  <span class="dest-price-label">Experience Cost</span>
+                  <div class="dest-price-val">₹5,500</div>
+                </div>
+                <button class="dest-btn-view" onclick="showToast('Experience added to planner!')">Book Slot</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: LIVE TRIP BUDGET CALCULATOR -->
+      <section class="page-section" id="calculator">
+        <div class="section-header">
+          <span class="section-tag">Interactive Estimator</span>
+          <h2 class="section-title">LIVE TRIP BUDGET CALCULATOR</h2>
+          <p class="section-subtitle">
+            Adjust trip duration, number of travelers, and comfort tier to instantly calculate accurate all-inclusive expenses.
+          </p>
+        </div>
+
+        <div class="calculator-box">
+          <!-- Left Controls -->
+          <div>
+            <div class="calc-control-group">
+              <div class="calc-label-row">
+                <span class="calc-label">Duration of Journey</span>
+                <span class="calc-val-display" id="calc-days-val">6 Days</span>
+              </div>
+              <input type="range" min="2" max="21" value="6" class="calc-range-slider" id="calc-days-slider" />
+            </div>
+
+            <div class="calc-control-group">
+              <div class="calc-label-row">
+                <span class="calc-label">Number of Explorers</span>
+                <span class="calc-val-display" id="calc-travelers-val">2 Travelers</span>
+              </div>
+              <input type="range" min="1" max="10" value="2" class="calc-range-slider" id="calc-travelers-slider" />
+            </div>
+
+            <div class="calc-control-group">
+              <div class="calc-label-row" style="margin-bottom: 14px;">
+                <span class="calc-label">Comfort Tier</span>
+                <span style="font-size: 0.85rem; color: #94a3b8;">Select Style</span>
+              </div>
+              <div class="tier-select-grid">
+                <button class="tier-btn" data-tier="budget">
+                  <div>🏕 Nomad</div>
+                  <div style="font-size: 0.75rem; color: #94a3b8;">Budget Friendly</div>
+                </button>
+                <button class="tier-btn active" data-tier="balanced">
+                  <div>✨ Chic</div>
+                  <div style="font-size: 0.75rem; color: #94a3b8;">Balanced Comfort</div>
+                </button>
+                <button class="tier-btn" data-tier="luxury">
+                  <div>👑 Royal</div>
+                  <div style="font-size: 0.75rem; color: #94a3b8;">Ultra Luxury</div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Calculation Summary -->
+          <div class="calc-summary-panel">
+            <div class="summary-total-block">
+              <div class="summary-total-lbl">Estimated Total Investment</div>
+              <div class="summary-total-number" id="calc-total-val">₹51,600</div>
+              <div class="summary-per-person" id="calc-perperson-val">₹25,800 / person</div>
+            </div>
+
+            <div class="calc-breakdown-list">
+              <div class="breakdown-row">
+                <span>🏨 Stays & Heritage Resorts</span>
+                <span id="calc-stays-val">₹24,000</span>
+              </div>
+              <div class="breakdown-row">
+                <span>🍽 Dining & Signature Cuisine</span>
+                <span id="calc-food-val">₹19,200</span>
+              </div>
+              <div class="breakdown-row">
+                <span>🎯 Activities & Curated Passes</span>
+                <span id="calc-activities-val">₹16,800</span>
+              </div>
+              <div class="breakdown-row">
+                <span>🚗 Private Transfers & Chauffeur</span>
+                <span id="calc-transport-val">₹6,000</span>
+              </div>
+            </div>
+
+            <button class="btn-plan-trip" style="width: 100%; justify-content: center; margin-top: 24px;" onclick="showToast('Custom quotation generated! Concierge notified.');">
+              Lock In This Estimate & Plan Route →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: INTERACTIVE TRAVEL MAP (v2 Explorer with live dossiers) -->
+      <section class="page-section" id="map">
+        <div class="section-header">
+          <span class="section-tag">Cartographic Visualizer</span>
+          <h2 class="section-title">DESTINATION MAP EXPLORER</h2>
+          <p class="section-subtitle">
+            Hover any glowing pin for a live dossier flash — click it to load full region highlights, weather windows, and route blueprints in the dossier panel.
+          </p>
+        </div>
+
+        <div class="map-explorer-grid">
+          <div class="map-board-v2" data-map-explorer data-map-variant="compact">
+            <div class="map-grid-overlay"></div>
+            <div class="map-compass"><span class="map-compass-star">▲</span><span class="map-compass-lbl">N</span></div>
+
+            <!-- Kashmir Pin -->
+            <div class="map-pin" style="top: 22%; left: 32%;" title="Kashmir Valley"
+              data-name="Kashmir Valley" data-coords="34.08° N · 74.79° E" data-weather="8–28°C · Alpine sun" data-months="Apr – Jun" data-days="6 Days" data-price="₹18,500" data-route="Srinagar → Gulmarg → Pahalgam" data-img="/assets/images/dest_kashmir_paradise_1791217715653.jpg" data-dest="kashmir"
+              data-blurb="Shikara dawns on Dal Lake, saffron fields of Pampore and the Gulmarg gondola to 3,980m.">
+              <div class="map-pin-pulse"></div>
+              <span>🏔</span>
+              <div class="map-pin-label">Kashmir · 34.08° N</div>
+              <div class="map-pin-tip"><h5>Kashmir Valley</h5><p>Shikara dawns · Gulmarg gondola</p><span>8–28°C · Apr – Jun</span></div>
+            </div>
+
+            <!-- Rajasthan Pin -->
+            <div class="map-pin" style="top: 42%; left: 24%;" title="Rajasthan Palaces"
+              data-name="Royal Rajasthan" data-coords="26.91° N · 75.79° E" data-weather="12–32°C · Desert gold" data-months="Oct – Mar" data-days="7–8 Days" data-price="₹16,200" data-route="Jodhpur → Udaipur → Jaisalmer" data-img="/assets/images/rajasthan_fort_palace_1791610927685.jpg" data-dest="rajasthan"
+              data-blurb="Illuminated Mehrangarh ramparts, Udaipur lake palaces and camel safaris on Sam dunes.">
+              <div class="map-pin-pulse"></div>
+              <span>🏰</span>
+              <div class="map-pin-label">Rajasthan · 26.91° N</div>
+              <div class="map-pin-tip"><h5>Royal Rajasthan</h5><p>Fort twilights · Desert galas</p><span>12–32°C · Oct – Mar</span></div>
+            </div>
+
+            <!-- Goa Pin -->
+            <div class="map-pin" style="top: 68%; left: 28%;" title="South Goa Coast"
+              data-name="South Goa Coast" data-coords="15.29° N · 74.12° E" data-weather="22–33°C · Balmy coast" data-months="Nov – Mar" data-days="5 Days" data-price="₹12,800" data-route="Palolem → Cola → Agonda" data-img="/assets/images/goa_sunset_palms_1791610909763.jpg" data-dest="goa"
+              data-blurb="Lantern-lit beach shacks, dolphin coves, Portuguese mansions and Cola's emerald lagoon.">
+              <div class="map-pin-pulse"></div>
+              <span>🏖</span>
+              <div class="map-pin-label">Goa · 15.29° N</div>
+              <div class="map-pin-tip"><h5>South Goa Coast</h5><p>Lantern shacks · Hidden coves</p><span>22–33°C · Nov – Mar</span></div>
+            </div>
+
+            <!-- Swiss Alps Pin -->
+            <div class="map-pin" style="top: 25%; left: 74%;" title="Swiss Alps"
+              data-name="Swiss Matterhorn" data-coords="45.97° N · 7.65° E" data-weather="5–22°C · Crisp alpine" data-months="Jun – Sep" data-days="7 Days" data-price="₹1,45,000" data-route="Zermatt → Gornergrat → Glacier Paradise" data-img="/assets/images/grand_matterhorn_alps_1791222654485.jpg" data-dest="alps"
+              data-blurb="Golden-hour reflections at Stellisee, Gornergrat railway panoramas and fondue in car-free Zermatt.">
+              <div class="map-pin-pulse"></div>
+              <span>❄</span>
+              <div class="map-pin-label">Swiss Matterhorn · 45.97° N</div>
+              <div class="map-pin-tip"><h5>Swiss Matterhorn</h5><p>Glacier rails · Mirror lakes</p><span>5–22°C · Jun – Sep</span></div>
+            </div>
+
+            <!-- Iceland Pin -->
+            <div class="map-pin" style="top: 15%; left: 62%;" title="Iceland Aurora"
+              data-name="South Iceland" data-coords="64.14° N · 21.90° W" data-weather="-5–10°C · Arctic night" data-months="Sep – Mar" data-days="6 Days" data-price="₹1,28,000" data-route="Reykjavik → Vik → Jökulsárlón" data-img="/assets/images/dest_iceland_aurora_1791217726046.jpg" data-dest="iceland"
+              data-blurb="Emerald aurora storms, Blue Lagoon soaks, glacier-lagoon safaris and Vik's basalt shores.">
+              <div class="map-pin-pulse"></div>
+              <span>🌌</span>
+              <div class="map-pin-label">Iceland · 64.14° N</div>
+              <div class="map-pin-tip"><h5>South Iceland</h5><p>Aurora storms · Ice lagoons</p><span>-5–10°C · Sep – Mar</span></div>
+            </div>
+
+            <div class="map-readout" data-map-readout>◉ Move across the chart…</div>
+            <div class="map-legend"><span><i>●</i> Flagship haven</span><span><i>◐</i> Click pin = dossier</span></div>
+          </div>
+
+          <aside class="map-detail-card" data-map-detail></aside>
+        </div>
+      </section>
+
+      <!-- SECTION 6: TESTIMONIALS & GUESTBOOK -->
+      <section class="page-section" id="testimonials">
+        <div class="section-header">
+          <span class="section-tag">Voices of Voyagers</span>
+          <h2 class="section-title">WHAT EXPLORERS SAY</h2>
+          <p class="section-subtitle">
+            Authentic experiences shared by discerning travelers who journeyed with us.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div>
+              <div class="test-stars">★★★★★</div>
+              <p class="test-quote">"The Kashmir shikara sunrise and Gulmarg gondola itinerary was completely flawless. We stayed in an antique cedar houseboat and woke up to snow spires every morning."</p>
+            </div>
+            <div class="test-author-row">
+              <div class="test-avatar">AR</div>
+              <div>
+                <div class="test-author-name">Aarav & Riya Sen</div>
+                <div class="test-author-role">Kashmir Odyssey · 6 Days</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="test-stars">★★★★★</div>
+              <p class="test-quote">"South Goa’s hidden coves and the lantern shack dinner at Palolem was pure magic. The live budget estimator helped us balance private boutique stays within our target!"</p>
+            </div>
+            <div class="test-author-row">
+              <div class="test-avatar">SK</div>
+              <div>
+                <div class="test-author-name">Siddharth Kapoor</div>
+                <div class="test-author-role">South Goa Explorer · 5 Days</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="test-stars">★★★★★</div>
+              <p class="test-quote">"Seeing the Matterhorn at sunrise in Zermatt took our breath away. The movable background feature and the detailed day-by-day guides made preparing for the journey a joy."</p>
+            </div>
+            <div class="test-author-row">
+              <div class="test-avatar">EL</div>
+              <div>
+                <div class="test-author-name">Elena Rostova</div>
+                <div class="test-author-role">Swiss Alpine Trek · 7 Days</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: TRAVEL WISDOM & FAQ ACCORDION -->
+      <section class="page-section" id="faq">
+        <div class="section-header">
+          <span class="section-tag">Expert Guidance</span>
+          <h2 class="section-title">TRAVEL WISDOM & FAQ</h2>
+          <p class="section-subtitle">
+            Essential answers regarding packing, booking flexibilities, and bespoke concierge assistance.
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>How do custom itineraries and concierge bookings work?</span>
+              <span class="faq-icon-arrow">▼</span>
+            </div>
+            <div class="faq-body">
+              Once you choose your destinations or use our budget calculator, our dedicated concierge team pairs you with a local specialist. They coordinate luxury boutique properties, private chauffeurs, permits, and private guides tailored to your exact pacing.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>What is included in the estimated package price?</span>
+              <span class="faq-icon-arrow">▼</span>
+            </div>
+            <div class="faq-body">
+              All package prices include 4★/5★ heritage stays, gourmet breakfast and dining allowances, private air-conditioned vehicle transfers, entry passes, and 24/7 on-call trip support. Domestic flights can be bundled seamlessly upon request.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>What is the best time to visit Kashmir and Goa?</span>
+              <span class="faq-icon-arrow">▼</span>
+            </div>
+            <div class="faq-body">
+              Kashmir is breathtaking from April to June for blooming tulips and green meadows, and December to February for skiing and fresh snow. Goa shines brightest from November to March when the coastal climate is dry, balmy, and pleasant.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header">
+              <span>How do I run this frontend project on port 5500?</span>
+              <span class="faq-icon-arrow">▼</span>
+            </div>
+            <div class="faq-body">
+              This entire frontend is handcrafted with pure HTML, CSS, and modern JavaScript in the <code>/frontend</code> directory! You can open <code>frontend/index.html</code> directly using VS Code Live Server (which defaults to port 5500), or run <code>npm run serve:5500</code> in your terminal. Zero TypeScript compiler required.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 9: PRE-FOOTER ODYSSEY BANNER -->
+      <section class="page-section" style="padding-bottom: 30px;">
+        <div style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; backdrop-filter: blur(20px);">
+          <h2 style="font-family: var(--font-display); font-size: 2.8rem; color: #fff; margin-bottom: 16px;">READY FOR YOUR NEXT ODYSSEY?</h2>
+          <p style="color: #cbd5e1; font-size: 1.2rem; max-width: 650px; margin: 0 auto 30px;">Let us curate an unforgettable expedition with private chauffeurs, authentic royal retreats, and lifetime memories.</p>
+          <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+            <button class="btn-hero-primary" onclick="openWishlistDrawer()">Create Custom Itinerary →</button>
+            <a href="#under-nav-search" class="btn-hero-secondary">Search Havens 🔍</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ====================================================================
+         5. COMPREHENSIVE LUXURY FOOTER
+         ==================================================================== -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Col 1: Brand Info -->
+          <div>
+            <div class="brand-link" style="margin-bottom: 16px;">
+              <div class="brand-emblem">🧭</div>
+              <div class="brand-text-wrap">
+                <span class="brand-name">TRAVORA</span>
+                <span class="brand-tagline">Curated Odysseys</span>
+              </div>
+            </div>
+            <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 24px; max-width: 380px;">
+              Artisanal travel discovery and trip-planning platform. Handcrafted for explorers seeking true cultural immersion, majestic landscapes, and serene escapes.
+            </p>
+            <div class="social-icons-bar">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube" title="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+              <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter" title="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            </div>
+            <div class="footer-contact">
+              <div>✉️ hello@travora.io</div>
+              <div>☎️ +91 98765 43210 · 24/7 concierge</div>
+              <div>📍 Connaught Place, New Delhi</div>
+            </div>
+            <div class="app-badges">
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora iOS app — coming soon to the App Store!')">🍎 App Store</a>
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora Android app — coming soon to Google Play!')">▷ Google Play</a>
+            </div>
+          </div>
+
+          <!-- Col 2: Destinations -->
+          <div>
+            <h4 class="footer-col-title">Top Havens</h4>
+            <ul class="footer-links-list">
+              <li><a href="javascript:void(0)" onclick="openDestinationModal('kashmir')" class="footer-link">Kashmir Valley</a></li>
+              <li><a href="javascript:void(0)" onclick="openDestinationModal('goa')" class="footer-link">South Goa Serenity</a></li>
+              <li><a href="javascript:void(0)" onclick="openDestinationModal('rajasthan')" class="footer-link">Royal Rajasthan</a></li>
+              <li><a href="javascript:void(0)" onclick="openDestinationModal('alps')" class="footer-link">Swiss Matterhorn</a></li>
+              <li><a href="javascript:void(0)" onclick="openDestinationModal('iceland')" class="footer-link">Iceland Aurora</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Quick Navigation -->
+          <div>
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html" class="footer-link">Home Overview</a></li>
+              <li><a href="destinations.html" class="footer-link">Curated Havens</a></li>
+              <li><a href="experiences.html" class="footer-link">Signatures</a></li>
+              <li><a href="budget-estimator.html" class="footer-link">Budget Engine</a></li>
+              <li><a href="interactive-map.html" class="footer-link">Map Highlights</a></li>
+              <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Dispatch Newsletter -->
+          <div>
+          <div>
+          <h4 class="footer-col-title">Travel Moods</h4>
+          <ul class="footer-links-list">
+            <li><a href="destinations.html" class="footer-link">🏔 Alpine Thrills</a></li>
+            <li><a href="destinations.html" class="footer-link">🏖 Coastal Calm</a></li>
+            <li><a href="destinations.html" class="footer-link">🏰 Royal Heritage</a></li>
+            <li><a href="destinations.html" class="footer-link">🌌 Night Skies</a></li>
+            <li><a href="experiences.html" class="footer-link">✨ Ritual Moments</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Travel Dispatches</h4>
+            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">
+              Receive handpicked seasonal flight alerts, secret heritage stays, and route guides directly in your inbox.
+            </p>
+            <form class="footer-newsletter-form" onsubmit="handleNewsletter(event)">
+              <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Your explorer email..." required />
+              <button type="submit" class="newsletter-btn">Join</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+          <div class="trust-row">
+            <span>🔒 Secure checkout</span>
+            <span>✔ Verified stays</span>
+            <span>🕒 24/7 concierge</span>
+            <span>💳 Visa · MC · UPI</span>
+            <span>⚡ Reply in ~2h</span>
+          </div>
+        <div class="footer-bottom-bar">
+          <div>
+            © <span data-year>2026</span> TRAVORA Inc. All rights reserved. Handcrafted with Pure HTML, CSS & Vanilla JavaScript.
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <span class="port-badge">PORT: 5500 READY</span>
+            <span>Zero TypeScript • Pure Artisan Craft</span>
+            <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ Top</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ====================================================================
+         6. MODALS & TOAST NOTIFICATION CONTAINERS
+         ==================================================================== -->
+    <div id="generic-modal" class="modal-backdrop" onclick="if(event.target === this) closeModal()">
+      <div class="modal-window">
+        <button class="modal-close-btn" onclick="closeModal()">✕</button>
+        <div id="modal-inner-content"></div>
+      </div>
+    </div>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Handcrafted Pure Vanilla JavaScript Engine -->
+    <script src="/frontend/js/app.js"></script>
+  </body>
+</html>

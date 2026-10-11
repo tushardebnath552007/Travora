@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiences - Signature Moments | TRAVORA</title>
+  <meta name="description" content="Signature travel experiences: dawn shikara markets, lantern beach feasts, palace banquets, toy-train journeys, aurora chases, and tea tastings.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;900&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/css/style.css">
+</head>
+<body data-theme="violet">
+
+  <div id="bg-viewport">
+    <div id="movable-bg" style="background-image: url('/assets/images/goa_sunset_palms_1791610909763.jpg');"></div>
+  </div>
+
+
+  <button class="menubar-fab" aria-label="Open menu">☰</button>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <div class="brand-emblem">🧭</div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">TRAVORA</span>
+          <span class="brand-tagline">Curated Odysseys</span>
+        </div>
+      </a>
+
+      <div style="background: linear-gradient(135deg, rgba(168,85,247,0.18) 0%, rgba(244,114,182,0.18) 100%); border: 1px solid rgba(168,85,247,0.4); border-radius: 12px; padding: 12px 14px; width: 100%;">
+        <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.18em; color: #d8b4fe;">✨ SIGNATURE ATELIER</div>
+        <div style="font-weight: 800; color: #fff; font-size: 0.95rem;">Moments money can't buy (almost)</div>
+      </div>
+
+      <div class="nav-account" id="nav-account" style="display: none;">
+        <div class="nav-account-avatar" id="nav-account-avatar">T</div>
+        <div class="nav-account-info">
+          <div class="nav-account-name" id="nav-account-name">Traveler</div>
+          <div class="nav-account-email" id="nav-account-email">you@example.com</div>
+        </div>
+        <button class="nav-account-out" onclick="logoutUser()" title="Sign out">⎋</button>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-item-link">Home</a></li>
+        <li><a href="destinations.html" class="nav-item-link">Destinations</a></li>
+        <li><a href="experiences.html" class="nav-item-link active">Experiences</a></li>
+        <li><a href="budget-estimator.html" class="nav-item-link">Budget Estimator</a></li>
+        <li><a href="interactive-map.html" class="nav-item-link">Interactive Map</a></li>
+        <li><a href="wisdom.html" class="nav-item-link">Wisdom</a></li>
+        <li><a href="contact.html" class="nav-item-link">Contact</a></li>
+      </ul>
+
+      <div class="social-icons-bar">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+        <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="action-btn-wishlist" onclick="openWishlistDrawer()" title="View Saved Destinations">
+          <span>♥ Wishlist</span>
+          <span class="wishlist-count-badge">0</span>
+        </button>
+        <button class="btn-plan-trip" onclick="window.location.href='destinations.html'">
+          <span>Find My Haven</span>
+          <span>→</span>
+        </button>
+        <button class="hamburger-btn" aria-label="Toggle Navigation">☰</button>
+          <div class="auth-row">
+            <a href="login.html" class="auth-btn-login">Log In</a>
+            <a href="signup.html" class="auth-btn-signup">Sign Up</a>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="under-nav-search-bar" id="under-nav-search">
+    <div class="search-inner-wrapper">
+      <div class="search-primary-row">
+        <div class="search-input-box">
+          <span class="search-icon-left">🔍</span>
+          <input type="text" id="under-nav-input" class="main-search-input" placeholder="Search shikara rides, beach feasts, palace banquets..." autocomplete="off">
+          <span class="search-kbd-hint">Press '/' to search</span>
+          <div id="search-dropdown" class="search-results-dropdown"></div>
+        </div>
+      </div>
+      <div class="search-filters-row">
+        <div class="category-filter-chips">
+          <span class="filter-chip active" data-category="all">All Experiences</span>
+          <span class="filter-chip" data-category="mountains">🏔 Alpine</span>
+          <span class="filter-chip" data-category="beaches">🏖 Coastal</span>
+          <span class="filter-chip" data-category="heritage">🏰 Royal</span>
+          <span class="filter-chip" data-category="aurora">🌌 Night Skies</span>
+        </div>
+        <div class="quick-tags-prompt">
+          <span>Trending:</span>
+          <span class="quick-tag-link" onclick="setQuickSearch('Shikara')">Shikara</span> ·
+          <span class="quick-tag-link" onclick="setQuickSearch('Aurora')">Aurora</span> ·
+          <span class="quick-tag-link" onclick="setQuickSearch('Palace')">Palace</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <nav class="page-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span>›</span><span>Experiences</span>
+    </nav>
+
+    <section class="hero-section">
+      <div class="hero-bleed" style="background-image: url('/assets/images/goa_sunset_palms_1791610909763.jpg');">
+        <div>
+          <div class="hero-badge"><span>✦</span> Sensory Wonders · Beyond Sightseeing</div>
+          <h1 class="hero-title">SIGNATURE <span class="hero-title-highlight">EXPERIENCES</span></h1>
+          <p class="hero-description">
+            Beyond ordinary sightseeing: dawn floating markets, lantern-lit beach feasts, royal rooftop banquets, steam toy-train loops, aurora hunts, and first-flush tea tastings — moments that stay with you forever.
+          </p>
+          <div class="hero-actions-row">
+            <a href="#all-experiences" class="btn-hero-primary"><span>Browse Experiences</span><span>→</span></a>
+            <a href="destinations.html" class="btn-hero-secondary"><span>Meet the Havens</span><span>🌍</span></a>
+          </div>
+          <div class="stat-pills"><span>60+ Signature Slots</span><span>⭐ 4.9 Guest Delight</span><span>100% Local-Hosted</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="all-experiences">
+      <div class="section-header">
+        <span class="section-tag">The Collection</span>
+        <h2 class="section-title">SIX UNFORGETTABLE RITUALS</h2>
+        <p class="section-subtitle">Hand-hosted by local masters — boatmen, chefs, engineers of steam, and aurora hunters.</p>
+      </div>
+      <p class="rail-hint">← Drag sideways to browse all six rituals →</p>
+      <div class="exp-rail">
+        <div class="dest-card" data-category="mountains">
+          <div class="dest-card-media">
+            <img src="/assets/images/dest_kashmir_paradise_1791217715653.jpg" class="dest-card-img" alt="Dawn Shikara">
+            <span class="dest-badge-category">Serenity</span>
+          </div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>📍 Srinagar, Kashmir</span><span>⭐ 4.9 · Dawn Hours</span></div>
+            <h3 class="dest-card-title">Dawn Shikara Floating Market</h3>
+            <p class="dest-card-tagline">Glide over still lotus waters at 5:30 AM as boat vendors trade saffron flowers, woodcrafts, and steaming kahwa.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Experience Cost</span><div class="dest-price-val">₹2,400</div></div><button class="dest-btn-view" onclick="showToast('Experience added to planner!')">Book Slot</button></div>
+          </div>
+        </div>
+        <div class="dest-card" data-category="beaches">
+          <div class="dest-card-media">
+            <img src="/assets/images/goa_sunset_palms_1791610909763.jpg" class="dest-card-img" alt="Beach Feast">
+            <span class="dest-badge-category">Bohemian</span>
+          </div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>📍 Palolem, South Goa</span><span>⭐ 4.8 · Twilight</span></div>
+            <h3 class="dest-card-title">Lantern-Lit Bohemian Beach Feast</h3>
+            <p class="dest-card-tagline">Dine barefoot on golden sands under woven lanterns as guitar melodies merge with ocean waves.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Experience Cost</span><div class="dest-price-val">₹3,800</div></div><button class="dest-btn-view" onclick="showToast('Experience added to planner!')">Book Slot</button></div>
+          </div>
+        </div>
+        <div class="dest-card" data-category="heritage">
+          <div class="dest-card-media">
+            <img src="/assets/images/rajasthan_fort_palace_1791610927685.jpg" class="dest-card-img" alt="Palace Banquet">
+            <span class="dest-badge-category">Royal</span>
+          </div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>📍 Jodhpur & Udaipur</span><span>⭐ 5.0 · Evening</span></div>
+            <h3 class="dest-card-title">Twilight Rooftop Palace Banquet</h3>
+            <p class="dest-card-tagline">Ancestral palace chefs, Rajasthani recipes, and panoramic views of illuminated citadels at dusk.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Experience Cost</span><div class="dest-price-val">₹5,500</div></div><button class="dest-btn-view" onclick="showToast('Experience added to planner!')">Book Slot</button></div>
+          </div>
+        </div>
+        <div class="dest-card" data-category="mountains">
+          <div class="dest-card-media">
+            <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" class="dest-card-img" alt="Toy Train" loading="lazy">
+            <span class="dest-badge-category">Heritage Rail</span>
+          </div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>📍 Darjeeling Himalayan Railway</span><span>⭐ 4.9 · Morning</span></div>
+            <h3 class="dest-card-title">Steam Toy-Train Loop Journey</h3>
+            <p class="dest-card-tagline">Chuff over the Batasia Loop spiral behind a 140-year-old steam engine as Kanchenjunga watches.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Experience Cost</span><div class="dest-price-val">₹1,600</div></div><button class="dest-btn-view" onclick="showToast('Experience added to planner!')">Book Slot</button></div>
+          </div>
+        </div>
+        <div class="dest-card" data-category="aurora">
+          <div class="dest-card-media">
+            <img src="/assets/images/dest_iceland_aurora_1791217726046.jpg" class="dest-card-img" alt="Aurora Chase">
+            <span class="dest-badge-category">Night Skies</span>
+          </div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>📍 Vik & Jökulsárlón, Iceland</span><span>⭐ 5.0 · Midnight</span></div>
+            <h3 class="dest-card-title">Aurora Hunt with Hot Cocoa</h3>
+            <p class="dest-card-tagline">Chase clear skies with an aurora forecaster, tripods ready, cocoa steaming, green fire overhead.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Experience Cost</span><div class="dest-price-val">₹8,900</div></div><button class="dest-btn-view" onclick="showToast('Experience added to planner!')">Book Slot</button></div>
+          </div>
+        </div>
+        <div class="dest-card" data-category="heritage">
+          <div class="dest-card-media">
+            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80" class="dest-card-img" alt="Tea Tasting" loading="lazy">
+            <span class="dest-badge-category">Connoisseur</span>
+          </div>
+          <div class="dest-card-content">
+            <div class="dest-meta-row"><span>📍 Nathmulls, Darjeeling</span><span>⭐ 4.8 · Afternoon</span></div>
+            <h3 class="dest-card-title">First-Flush Tea Tasting Ritual</h3>
+            <p class="dest-card-tagline">Slurp muscatel second-flush like a sommelier while clouds roll across the Kanchenjunga wall.</p>
+            <div class="dest-card-footer"><div><span class="dest-price-label">Experience Cost</span><div class="dest-price-val">₹1,200</div></div><button class="dest-btn-view" onclick="showToast('Experience added to planner!')">Book Slot</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="inclusions">
+      <div class="section-header">
+        <span class="section-tag">No Surprises</span>
+        <h2 class="section-title">EVERY SLOT INCLUDES</h2>
+        <p class="section-subtitle">The same artisan standard, from a ₹1,200 tasting to a ₹8,900 aurora night.</p>
+      </div>
+      <div class="calculator-box" style="grid-template-columns: 1fr;">
+        <div class="calc-breakdown-list">
+          <div class="breakdown-row"><span>🎙 Local master host & storytelling</span><span>Included</span></div>
+          <div class="breakdown-row"><span>🚗 Door-to-door private transfers</span><span>Included</span></div>
+          <div class="breakdown-row"><span>📸 Professional photo assists</span><span>Included</span></div>
+          <div class="breakdown-row"><span>🍽 Tastings, brews & regional snacks</span><span>Included</span></div>
+          <div class="breakdown-row"><span>🛡 Full safety kit & on-call support</span><span>Included</span></div>
+          <div class="breakdown-row"><span>🌧 Free weather-date rescheduling</span><span>Included</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="good-to-know">
+      <div class="section-header">
+        <span class="section-tag">Before You Book</span>
+        <h2 class="section-title">GOOD TO KNOW</h2>
+        <p class="section-subtitle">The practical fine print, stated proudly upfront.</p>
+      </div>
+      <div class="calculator-box" style="grid-template-columns: 1fr;">
+        <div class="calc-breakdown-list">
+          <div class="breakdown-row"><span>📍 Meeting points shared 24h prior</span><span>WhatsApp + SMS</span></div>
+          <div class="breakdown-row"><span>🗣 Hosts speak English, Hindi + local tongue</span><span>Always</span></div>
+          <div class="breakdown-row"><span>🚶 Fitness: easy grade unless marked</span><span>All ages 8–75</span></div>
+          <div class="breakdown-row"><span>🌧 Weather cover: free reschedule</span><span>No questions</span></div>
+          <div class="breakdown-row"><span>👥 Group caps: 12 guests maximum</span><span>Private on request</span></div>
+          <div class="breakdown-row"><span>🥗 Veg / Jain / vegan variants standard</span><span>Just ask</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" id="voices">
+      <div class="section-header">
+        <span class="section-tag">Voices of Voyagers</span>
+        <h2 class="section-title">GUESTS REMEMBER</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card"><div><div class="test-stars">★★★★★</div><p class="test-quote">"The floating market at dawn felt like a dream we were allowed to row through."</p></div><div class="test-author-row"><div class="test-avatar">MN</div><div><div class="test-author-name">Meera & Arjun Nair</div><div class="test-author-role">Shikara Ritual · Kashmir</div></div></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">★★★★★</div><p class="test-quote">"Our chef used to cook for maharajas. Every bite came with a story."</p></div><div class="test-author-row"><div class="test-avatar">SK</div><div><div class="test-author-name">Siddharth Kapoor</div><div class="test-author-role">Palace Banquet · Jodhpur</div></div></div></div>
+        <div class="testimonial-card"><div><div class="test-stars">★★★★★</div><p class="test-quote">"The sky exploded green exactly as our hunter predicted. Unreal precision."</p></div><div class="test-author-row"><div class="test-avatar">DO</div><div><div class="test-author-name">Daniel Okafor</div><div class="test-author-role">Aurora Hunt · Iceland</div></div></div></div>
+      </div>
+    </section>
+
+    <section class="page-section" id="faq">
+      <div class="section-header">
+        <span class="section-tag">Expert Guidance</span>
+        <h2 class="section-title">EXPERIENCE FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-header"><span>What if weather cancels my slot?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">All outdoor rituals carry free date rescheduling. Aurora hunts run on forecast windows — we only drive out when the odds are genuinely good.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>Are experiences private or grouped?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Both. Private hosting is default for banquets and shikaras; toy-train and lagoon cruises join small groups capped at twelve guests.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>Can dietary needs be accommodated?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Yes — vegetarian, Jain, vegan, and gluten-free variants are prepared by default on request at booking time.</div></div>
+        <div class="faq-item"><div class="faq-header"><span>How far ahead should I book?</span><span class="faq-icon-arrow">▼</span></div><div class="faq-body">Peak-season weekends sell out 2–3 weeks ahead. Weekday dawn and midnight slots often have next-day availability.</div></div>
+      </div>
+    </section>
+
+    <section class="page-section" style="padding-bottom: 30px;">
+      <div style="background: linear-gradient(135deg, rgba(168,85,247,0.15) 0%, rgba(6,182,212,0.15) 100%); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; backdrop-filter: blur(20px);">
+        <h2 style="font-family: var(--font-display); font-size: 2.8rem; color: #fff; margin-bottom: 16px;">COLLECT MOMENTS, NOT THINGS</h2>
+        <p style="color: #cbd5e1; font-size: 1.2rem; max-width: 650px; margin: 0 auto 30px;">Reserve your ritual first — routes and stays wrap around it effortlessly.</p>
+        <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="destinations.html" class="btn-hero-primary">Pick a Destination →</a>
+          <a href="budget-estimator.html" class="btn-hero-secondary">Price the Whole Trip 📊</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-link" style="margin-bottom: 16px;">
+            <div class="brand-emblem">🧭</div>
+            <div class="brand-text-wrap"><span class="brand-name">TRAVORA</span><span class="brand-tagline">Curated Odysseys</span></div>
+          </div>
+          <p style="color: #94a3b8; font-size: 1rem; line-height: 1.7; margin-bottom: 24px; max-width: 380px;">Artisanal travel discovery and trip-planning platform. Handcrafted for explorers seeking true cultural immersion.</p>
+          <div class="social-icons-bar">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" class="social-icon-btn instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" class="social-icon-btn youtube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="https://x.com" target="_blank" rel="noreferrer" class="social-icon-btn twitter"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" class="social-icon-btn facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <div class="footer-contact">
+              <div>✉️ hello@travora.io</div>
+              <div>☎️ +91 98765 43210 · 24/7 concierge</div>
+              <div>📍 Connaught Place, New Delhi</div>
+            </div>
+            <div class="app-badges">
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora iOS app — coming soon to the App Store!')">🍎 App Store</a>
+              <a class="app-badge" href="javascript:void(0)" onclick="showToast('Travora Android app — coming soon to Google Play!')">▷ Google Play</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Top Havens</h4>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('kashmir')" class="footer-link">Kashmir Valley</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('goa')" class="footer-link">South Goa Serenity</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('rajasthan')" class="footer-link">Royal Rajasthan</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('alps')" class="footer-link">Swiss Matterhorn</a></li>
+            <li><a href="javascript:void(0)" onclick="openDestinationModal('iceland')" class="footer-link">Iceland Aurora</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home Overview</a></li>
+            <li><a href="destinations.html" class="footer-link">Curated Havens</a></li>
+            <li><a href="experiences.html" class="footer-link">Signatures</a></li>
+            <li><a href="budget-estimator.html" class="footer-link">Budget Engine</a></li>
+            <li><a href="interactive-map.html" class="footer-link">Map Highlights</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+        <div>
+          <h4 class="footer-col-title">Travel Moods</h4>
+          <ul class="footer-links-list">
+            <li><a href="destinations.html" class="footer-link">🏔 Alpine Thrills</a></li>
+            <li><a href="destinations.html" class="footer-link">🏖 Coastal Calm</a></li>
+            <li><a href="destinations.html" class="footer-link">🏰 Royal Heritage</a></li>
+            <li><a href="destinations.html" class="footer-link">🌌 Night Skies</a></li>
+            <li><a href="experiences.html" class="footer-link">✨ Ritual Moments</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Travel Dispatches</h4>
+          <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">Seasonal flight alerts, secret heritage stays, and route guides in your inbox.</p>
+          <form class="footer-newsletter-form" onsubmit="handleNewsletter(event)">
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Your explorer email..." required>
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="trust-row">
+        <span>🔒 Secure checkout</span>
+        <span>✔ Verified stays</span>
+        <span>🕒 24/7 concierge</span>
+        <span>💳 Visa · MC · UPI</span>
+        <span>⚡ Reply in ~2h</span>
+      </div>
+      <div class="footer-bottom-bar">
+        <div>© <span data-year>2026</span> TRAVORA Inc. All rights reserved. Handcrafted with Pure HTML, CSS & Vanilla JavaScript.</div>
+        <div style="display: flex; align-items: center; gap: 14px;"><span class="port-badge">PORT: 5500 READY</span><span>Zero TypeScript • Pure Artisan Craft</span>
+            <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ Top</button></div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="generic-modal" class="modal-backdrop" onclick="if(event.target === this) closeModal()">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      <div id="modal-inner-content"></div>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container"></div>
+  <script src="/frontend/js/app.js"></script>
+</body>
+</html>
